@@ -1,0 +1,1291 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Buransh Tea House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..650;1,9..144,300..500&family=Instrument+Sans:wght@400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap">
+<style>
+/* Buransh: a slow hill-station editorial. Warm paper, pine ink, one rhododendron red.
+   Asymmetric 12-column grid, arched frames, film grain. Deliberately one warm light look. */
+:root{
+  --paper:#f5f1e8; --paper-2:#ede8dc; --card:#fbf8f1; --stone:#e3ddcf; --line:#d6cfbf;
+  --pine:#1d3a2e; --pine-2:#2d5141; --moss:#6d8a68; --sage:#a9b8a0;
+  --ink:#1f2b25; --ink-2:#55635b; --ink-3:#86908a;
+  --buransh:#b1303a; --buransh-2:#d4525b; --blush:#f2d8d3; --honey:#c38d2c;
+  --serif:"Fraunces",ui-serif,Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --deva:"Tiro Devanagari Hindi","Noto Serif Devanagari",serif;
+  --soft:cubic-bezier(.22,.8,.24,1);
+  --gut:clamp(18px,4vw,48px);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16.5px/1.6 var(--sans);overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:var(--blush);color:var(--pine)}
+img{max-width:100%;display:block}
+a{color:var(--pine);text-underline-offset:.22em;text-decoration-thickness:1px}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;padding:0}
+:focus-visible{outline:2px dashed var(--buransh);outline-offset:4px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em;text-wrap:balance;font-variation-settings:"opsz" 120}
+p{margin:0}
+.shell{max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
+.deva{font-family:var(--deva);font-weight:400;letter-spacing:0}
+.label{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.tnum{font-variant-numeric:tabular-nums}
+.sec{padding-block:clamp(84px,11vw,150px)}
+.sec-title{font-size:clamp(2.4rem,5.6vw,4.6rem);line-height:1;font-weight:350}
+.sec-title em{font-style:italic;color:var(--buransh);font-weight:300}
+.sec-lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--ink-2);max-width:46ch;margin-top:18px;line-height:1.55}
+.pill{text-decoration:none;display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 24px;border-radius:999px;background:var(--pine);color:var(--paper);font-weight:500;letter-spacing:.01em;transition:transform .5s var(--soft),background .3s}
+.pill:hover{background:var(--pine-2);transform:translateY(-2px)}
+.pill:active{transform:scale(.97)}
+.pill.ghost{background:transparent;color:var(--pine);box-shadow:inset 0 0 0 1.25px var(--pine)}
+.pill.ghost:hover{background:var(--pine);color:var(--paper)}
+.pill svg{width:18px;height:18px}
+.textlink{text-decoration:none;font-weight:500;color:var(--pine);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid currentColor;padding-bottom:2px}
+.textlink:hover{color:var(--buransh)}
+
+/* Reveal: visible by default; only hidden once script is running */
+.js [data-rise]{opacity:0;transform:translateY(34px);filter:blur(6px);transition:opacity 1.1s var(--soft),transform 1.2s var(--soft),filter 1.1s var(--soft)}
+.js [data-rise].in{opacity:1;transform:none;filter:none}
+@media (prefers-reduced-motion:reduce){.js [data-rise]{opacity:1;transform:none;filter:none;transition:none}}
+
+/* ---------------- header ---------------- */
+.top{position:fixed;inset:0 0 auto;z-index:60;transition:background .5s,box-shadow .5s,color .5s;color:var(--pine)}
+.top.solid{background:rgba(245,241,232,.86);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);box-shadow:0 1px 0 var(--line)}
+.top.night:not(.solid){color:#f3eee2}
+.top__in{max-width:1240px;margin:0 auto;padding:16px var(--gut);display:flex;align-items:center;gap:24px}
+.brand{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
+.brand svg{width:30px;height:30px}
+.brand b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:26px;letter-spacing:-.01em}
+.top nav{margin-left:auto;display:flex;gap:26px;font-size:15px}
+.top nav a{color:inherit;text-decoration:none;opacity:.85}
+.top nav a:hover{opacity:1;text-decoration:underline}
+.tray-btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;box-shadow:inset 0 0 0 1.25px currentColor;font-size:14.5px;font-weight:500}
+.tray-btn b{min-width:22px;height:22px;border-radius:11px;background:var(--buransh);color:#fff;font-size:12px;display:inline-grid;place-items:center;padding:0 6px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;box-shadow:inset 0 0 0 1.25px currentColor;align-items:center;justify-content:center}
+.burger svg{width:18px;height:18px}
+.overlay{position:fixed;inset:0;z-index:70;background:var(--pine);color:var(--paper);display:flex;flex-direction:column;justify-content:center;padding:var(--gut);clip-path:circle(0% at calc(100% - 44px) 38px);transition:clip-path .8s var(--soft);visibility:hidden}
+.overlay.open{clip-path:circle(150% at calc(100% - 44px) 38px);visibility:visible}
+.overlay a{font-family:var(--serif);font-size:clamp(2.4rem,9vw,4rem);color:var(--paper);text-decoration:none;line-height:1.2;font-style:italic;font-weight:300}
+.overlay .x{position:absolute;top:20px;right:var(--gut);width:44px;height:44px;border-radius:50%;box-shadow:inset 0 0 0 1.25px var(--paper);display:grid;place-items:center}
+@media (max-width:860px){.top nav{display:none}.burger{display:inline-flex}.tray-btn span{display:none}.top__in{gap:12px}.tray-btn{margin-left:auto}}
+
+/* ---------------- hero: layered hills ---------------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;background:var(--sky-b,#eef0ea);color:var(--pine)}
+.hero[data-sky="night"]{color:#f3eee2}
+.hero svg.hills{position:absolute;inset:0;width:100%;height:100%}
+.hero .layer{will-change:transform;transition:fill 1.4s}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:62%;z-index:2;pointer-events:none;background:linear-gradient(to top,var(--sky-b) 18%,color-mix(in srgb,var(--sky-b) 70%,transparent) 50%,transparent)}
+.hero__copy{position:absolute;left:0;right:0;bottom:clamp(36px,9vh,96px);z-index:3}
+.hero__copy .shell{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;align-items:end}
+.hero h1{font-size:clamp(3.1rem,8.6vw,7.2rem);line-height:.94;font-weight:330;letter-spacing:-.025em;font-variation-settings:"opsz" 144}
+.hero h1 em{font-style:italic;font-weight:280}
+.hero .deva{font-size:clamp(1.15rem,2vw,1.5rem);margin-top:18px;opacity:.9}
+.hero__acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:30px}
+.hero[data-sky="night"] .pill{background:#f3eee2;color:var(--pine)}
+.hero[data-sky="night"] .textlink{color:#f3eee2}
+.hero__note{justify-self:end;max-width:300px;background:rgba(251,248,241,.62);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:22px;padding:18px 20px;color:var(--ink);box-shadow:0 1px 0 rgba(255,255,255,.6) inset}
+.hero__note .label{display:block;margin-bottom:6px}
+.hero__note p{font-family:var(--serif);font-size:19px;line-height:1.3;font-style:italic}
+.sound{display:inline-flex;align-items:center;gap:10px;margin-top:14px;font-size:14px;font-weight:500;color:var(--pine)}
+.sound i{width:34px;height:34px;border-radius:50%;background:var(--pine);color:var(--paper);display:grid;place-items:center}
+.sound i svg{width:16px;height:16px}
+.sound .bars{display:inline-flex;gap:2px;align-items:flex-end;height:14px}
+.sound .bars span{width:3px;background:var(--pine);border-radius:2px;height:4px;transition:height .3s}
+.sound[aria-pressed="true"] .bars span{animation:eq 1s ease-in-out infinite}
+.sound .bars span:nth-child(2){animation-delay:.2s}.sound .bars span:nth-child(3){animation-delay:.4s}.sound .bars span:nth-child(4){animation-delay:.1s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+.scrollcue{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scrollcue i{width:1px;height:34px;background:currentColor;transform-origin:top;animation:cue 2.4s var(--soft) infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:860px){.hero__copy .shell{grid-template-columns:minmax(0,1fr)}.hero__note{justify-self:start}.scrollcue{display:none}}
+@media (max-height:720px) and (min-width:861px){.hero__note{display:none}}
+
+/* ---------------- ritual ---------------- */
+.ritual .shell{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center}
+.arch{border-radius:999px 999px 26px 26px;overflow:hidden;background:var(--stone);position:relative}
+.arch img{width:100%;height:100%;object-fit:cover}
+.ritual__img{grid-column:1/span 5;aspect-ratio:4/5}
+.ritual__img img{transform:scale(1.12);transition:transform 2.4s var(--soft)}
+.ritual__img.in img{transform:none}
+.ritual__copy{grid-column:7/span 6}
+.ritual__copy p.big{font-family:var(--serif);font-size:clamp(1.5rem,2.8vw,2.3rem);line-height:1.25;font-weight:330;color:var(--pine)}
+.ritual__copy p.big em{color:var(--buransh);font-style:italic}
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.notes b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--pine);line-height:1.2}
+.notes span{font-size:14px;color:var(--ink-2)}
+.caption{position:absolute;left:18px;bottom:16px;right:18px;color:#fff;font-family:var(--serif);font-style:italic;font-size:15px;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+@media (max-width:860px){.ritual__img{grid-column:1/-1;max-width:420px}.ritual__copy{grid-column:1/-1}.notes{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------------- weather moods ---------------- */
+.moods{background:var(--paper-2)}
+.moods__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px}
+.mood-pick{display:flex;flex-wrap:wrap;gap:10px}
+.mood-pick button{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 20px 0 14px;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);font-weight:500;transition:background .4s,color .4s,box-shadow .4s,transform .5s var(--soft)}
+.mood-pick button svg{width:24px;height:24px}
+.mood-pick button:hover{transform:translateY(-2px)}
+.mood-pick button[aria-pressed="true"]{background:var(--pine);color:var(--paper);box-shadow:none}
+.stage{position:relative;margin-top:36px;border-radius:32px;overflow:hidden;min-height:440px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);background:var(--stage,#cfd9d2);transition:background 1.2s var(--soft)}
+.stage::before{content:"";position:absolute;inset:0;background:var(--stage-img) center/cover no-repeat;opacity:.55;transition:opacity 1s}
+.stage::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--stage,#cfd9d2) 30%,color-mix(in srgb,var(--stage,#cfd9d2) 55%,transparent));transition:background 1.2s}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.stage__say{position:relative;z-index:2;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:space-between;gap:28px;color:var(--stage-ink,var(--pine))}
+.stage__say h3{font-size:clamp(2rem,3.6vw,3rem);line-height:1.05;font-weight:330}
+.stage__say h3 em{font-style:italic}
+.stage__say p{opacity:.85;max-width:34ch}
+.stage__picks{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:clamp(18px,3vw,36px);align-content:center}
+.pick{background:rgba(251,248,241,.9);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .6s var(--soft)}
+.pick:hover{transform:translateY(-4px) rotate(-.4deg)}
+.pick figure{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--stone)}
+.pick img{width:100%;height:100%;object-fit:cover}
+.pick div{padding:12px 14px 14px;display:grid;gap:2px}
+.pick b{font-family:var(--serif);font-weight:400;font-size:17px;line-height:1.2;color:var(--pine)}
+.pick .row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.plus{width:34px;height:34px;border-radius:50%;background:var(--pine);color:var(--paper);display:grid;place-items:center;transition:transform .4s var(--soft),background .3s}
+.plus:hover{background:var(--buransh);transform:rotate(90deg)}
+.plus svg{width:14px;height:14px}
+.swap .pick{animation:pickin .8s var(--soft) both}
+.swap .pick:nth-child(2){animation-delay:.08s}.swap .pick:nth-child(3){animation-delay:.16s}
+@keyframes pickin{from{opacity:0;transform:translateY(26px) scale(.97)}}
+@media (max-width:900px){.stage{grid-template-columns:minmax(0,1fr)}.stage__picks{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.pick div{padding:10px}.pick b{font-size:15px}}
+@media (max-width:520px){.stage__picks{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:14px}.pick .row span{font-size:13px}.plus{width:30px;height:30px}}
+
+/* ---------------- brew builder ---------------- */
+.brew .shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.cupwrap{position:sticky;top:96px;display:grid;justify-items:center;gap:18px}
+.cupcard{width:100%;aspect-ratio:1/1.05;border-radius:999px 999px 32px 32px;background:radial-gradient(120% 90% at 50% 0%,#fbf8f1 0%,var(--paper-2) 70%);display:grid;place-items:center;position:relative;overflow:hidden}
+.cupcard svg{width:78%;height:auto;overflow:visible}
+.liquid{transition:y 1.1s var(--soft),height 1.1s var(--soft),fill .9s}
+.foam{transition:opacity .8s,y 1.1s var(--soft)}
+.steam path{stroke:var(--ink-3);stroke-width:2.5;fill:none;stroke-linecap:round;opacity:.0;animation:steam 3.6s ease-in-out infinite}
+.steam path:nth-child(2){animation-delay:1.2s}.steam path:nth-child(3){animation-delay:2.4s}
+@keyframes steam{0%{opacity:0;transform:translateY(10px)}30%{opacity:.5}100%{opacity:0;transform:translateY(-26px)}}
+.fleck{transition:opacity .6s}
+.yourcup{text-align:center}
+.yourcup .label{display:block}
+.yourcup h3{font-size:clamp(1.5rem,2.6vw,2rem);font-style:italic;font-weight:330;color:var(--pine);margin-top:4px;min-height:1.2em}
+.yourcup .price{font-family:var(--serif);font-size:28px;color:var(--buransh);margin-top:4px}
+.steps{display:grid;gap:30px}
+.step h4{font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500;display:flex;gap:10px;align-items:baseline}
+.step h4 span{font-family:var(--serif);font-style:italic;font-size:22px;letter-spacing:0;text-transform:none;color:var(--buransh)}
+.choices{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.choice{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:8px 16px 8px 10px;border-radius:16px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);text-align:left;transition:box-shadow .3s,background .3s,transform .4s var(--soft)}
+.choice:hover{transform:translateY(-2px)}
+.choice[aria-pressed="true"],.choice[aria-checked="true"]{box-shadow:inset 0 0 0 2px var(--pine);background:#fff}
+.choice i{width:24px;height:24px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.choice small{display:block;color:var(--ink-3);font-size:12.5px;line-height:1.2}
+.choice b{font-weight:500;font-size:15px;line-height:1.2}
+.strength{margin-top:14px;display:grid;gap:8px}
+.strength input{width:100%;accent-color:var(--pine)}
+.strength .ticks{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-2)}
+.strength .ticks span[aria-current="true"]{color:var(--pine);font-weight:600}
+@media (max-width:900px){.brew .shell{grid-template-columns:minmax(0,1fr)}.cupwrap{position:relative;top:0;max-width:380px;margin:0 auto}}
+
+/* ---------------- menu ---------------- */
+.menu{background:var(--card)}
+.menu__bar{position:sticky;top:72px;z-index:20;background:rgba(251,248,241,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);margin-top:36px;padding-block:12px;border-block:1px solid var(--line)}
+.tabs{display:flex;gap:28px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;font-family:var(--serif);font-size:20px;color:var(--ink-3);padding:4px 0;position:relative;transition:color .3s}
+.tabs button::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--buransh);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--soft)}
+.tabs button[aria-selected="true"]{color:var(--pine)}
+.tabs button[aria-selected="true"]::after{transform:none}
+.moodchips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-top:10px}
+.moodchips::-webkit-scrollbar{display:none}
+.moodchips button{flex:none;font-size:13.5px;height:32px;padding:0 13px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);color:var(--ink-2);transition:all .3s}
+.moodchips button[aria-pressed="true"]{background:var(--buransh);color:#fff;box-shadow:none}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,32px);margin-top:36px}
+.mc{display:flex;flex-direction:column;gap:12px}
+.mc:nth-child(3n+2){margin-top:44px}
+.mc figure{margin:0;position:relative;aspect-ratio:4/5;border-radius:999px 999px 22px 22px;overflow:hidden;background:var(--stone)}
+.mc figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--soft)}
+.mc:hover figure img{transform:scale(1.05)}
+.mc figure .plus{position:absolute;right:14px;bottom:14px;width:44px;height:44px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.mc__top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.mc h3{font-size:24px;line-height:1.15;color:var(--pine);font-weight:380}
+.mc .price{font-family:var(--serif);font-size:21px;color:var(--buransh);white-space:nowrap}
+.mc .local{font-family:var(--deva);color:var(--moss);font-size:16px;margin-top:-6px}
+.mc p.d{color:var(--ink-2);font-size:15px;line-height:1.5}
+.mc__meta{display:flex;flex-wrap:wrap;gap:6px}
+.mc__meta span{font-size:12px;padding:3px 9px;border-radius:999px;background:var(--paper-2);color:var(--ink-2)}
+.mc__meta span.vg{background:#e1ebdc;color:#2f5a35}
+.mc details{font-size:14px;color:var(--ink-2)}
+.mc summary{cursor:pointer;color:var(--pine);font-weight:500;list-style:none;display:inline-flex;gap:6px;align-items:center}
+.mc summary::-webkit-details-marker{display:none}
+.mc summary::after{content:"";width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .3s}
+.mc details[open] summary::after{transform:rotate(225deg)}
+.mc details p{margin-top:8px;line-height:1.5}
+.nothing{grid-column:1/-1;text-align:center;padding:60px 0;color:var(--ink-2);font-family:var(--serif);font-size:22px;font-style:italic}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mc:nth-child(3n+2){margin-top:0}.mc:nth-child(2n){margin-top:44px}}
+@media (max-width:560px){.grid{grid-template-columns:minmax(0,1fr)}.mc:nth-child(2n){margin-top:0}.mc figure{aspect-ratio:5/4;border-radius:180px 180px 20px 20px}}
+
+/* ---------------- seasons ---------------- */
+.seasons .shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:center}
+.wheel{position:relative;width:min(100%,460px);aspect-ratio:1;justify-self:center}
+.wheel svg{width:100%;height:100%;overflow:visible}
+.wheel .m{cursor:pointer}
+.wheel .m path{transition:fill .4s,transform .5s var(--soft);transform-origin:230px 230px}
+.wheel .m:hover path{fill:var(--sage)}
+.wheel .m.on path{fill:var(--buransh)}
+.wheel .m text{font-family:var(--sans);font-size:12px;letter-spacing:.1em;fill:var(--ink-2);pointer-events:none}
+.wheel .m.on text{fill:#fff}
+.wheel .hub{font-family:var(--serif)}
+.season-card .label{display:block}
+.season-card h3{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;color:var(--pine);margin-top:10px;font-weight:330}
+.season-card h3 em{color:var(--buransh);font-style:italic}
+.season-card p{color:var(--ink-2);margin-top:14px;max-width:48ch}
+.season-card .special{margin-top:24px;padding:18px 20px;border-radius:20px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);display:flex;gap:16px;align-items:center}
+.season-card .special b{font-family:var(--serif);font-weight:400;font-size:20px;color:var(--pine);display:block}
+.season-card .special span{font-size:14px;color:var(--ink-2)}
+.season-card .special svg{width:44px;height:44px;flex:none;color:var(--buransh)}
+.season-card .fest{margin-top:12px;font-size:14px;color:var(--moss)}
+.season-fade{animation:sfade .7s var(--soft)}
+@keyframes sfade{from{opacity:0;transform:translateY(14px)}}
+@media (max-width:900px){.seasons .shell{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------------- reserve ---------------- */
+.reserve{background:var(--pine);color:#efeadd}
+.reserve .sec-title{color:#f5f1e8}
+.reserve .sec-title em{color:#f0a9a7}
+.reserve .sec-lead{color:#c9d0c5}
+.reserve__grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:44px;align-items:start}
+.plan{background:#24453a;border-radius:28px;padding:16px;position:relative}
+.plan svg{width:100%;height:auto;display:block}
+.plan .tbl{cursor:pointer}
+.plan .tbl rect,.plan .tbl circle.top,.plan .tbl ellipse{transition:fill .35s,stroke .35s}
+.plan .tbl:hover .top{fill:#3b6a58}
+.plan .tbl.taken{cursor:not-allowed;opacity:.38}
+.plan .tbl.small{opacity:.38;cursor:not-allowed}
+.plan .tbl.on .top{fill:#f0a9a7;stroke:#fff}
+.plan .tbl:focus-visible{outline:none}
+.plan .tbl:focus-visible .top{stroke:#f5f1e8;stroke-width:3}
+.plan text{font-family:var(--sans);fill:#c9d0c5;font-size:12px}
+.plan .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:#c9d0c5;padding:10px 6px 2px}
+.plan .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.book{display:grid;gap:22px}
+.book h4{font-family:var(--sans);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#a9b4a6;font-weight:500;margin-bottom:10px}
+.chiprow{display:flex;flex-wrap:wrap;gap:8px}
+.chiprow button{min-width:56px;padding:9px 14px;border-radius:14px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font-size:14px;line-height:1.2;text-align:center;transition:all .3s}
+.chiprow button small{display:block;font-size:11.5px;opacity:.7}
+.chiprow button[aria-pressed="true"]{background:#f5f1e8;color:var(--pine);box-shadow:none}
+.chiprow button:disabled{opacity:.3;cursor:not-allowed}
+.party{display:inline-flex;align-items:center;gap:14px;background:rgba(255,255,255,.07);border-radius:999px;padding:6px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.party button{width:38px;height:38px;border-radius:50%;background:#f5f1e8;color:var(--pine);font-size:20px;line-height:1}
+.party output{min-width:76px;text-align:center;font-family:var(--serif);font-size:20px}
+.picked{background:rgba(255,255,255,.06);border-radius:20px;padding:16px 18px;font-size:15px;color:#dfe5dc;min-height:74px}
+.picked b{font-family:var(--serif);font-weight:400;font-size:21px;color:#fff;display:block}
+.field{display:grid;gap:6px}
+.field label{font-size:13px;color:#a9b4a6}
+.field input{height:48px;border-radius:14px;border:0;background:rgba(255,255,255,.1);padding:0 16px;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16);outline:none}
+.field input:focus{box-shadow:inset 0 0 0 2px #f0a9a7}
+.reserve .pill{background:#f5f1e8;color:var(--pine)}
+.reserve .pill:hover{background:#fff}
+.reserve .pill:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.ticket{position:relative;background:#f5f1e8;color:var(--pine);border-radius:22px;padding:24px;display:grid;gap:6px;animation:tick .8s var(--soft)}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:var(--pine);transform:translateY(-50%)}
+.ticket::before{left:-11px}.ticket::after{right:-11px}
+.ticket h4{color:var(--buransh)!important}
+.ticket b{font-family:var(--serif);font-size:30px;font-weight:400;line-height:1.1}
+.ticket p{font-size:14px;color:var(--ink-2)}
+@keyframes tick{from{opacity:0;transform:rotate(-2deg) translateY(20px)}}
+.demo-note{font-size:12.5px;color:#a9b4a6}
+@media (max-width:960px){.reserve__grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------------- tea leaves ---------------- */
+.leaves .shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.reading{display:grid;justify-items:center;gap:22px}
+.saucer{width:min(100%,420px);aspect-ratio:1;position:relative}
+.saucer svg{width:100%;height:100%;overflow:visible}
+.saucer .cupturn{transform-origin:210px 210px;transform-box:view-box}
+.saucer.swirl .cupturn{animation:swirl 2.2s cubic-bezier(.45,.05,.2,1)}
+@keyframes swirl{0%{transform:rotate(0)}70%{transform:rotate(980deg)}100%{transform:rotate(1080deg)}}
+.leaf{transition:transform 1.4s var(--soft),opacity .8s}
+.fortune{min-height:4.2em;font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.25;font-style:italic;color:var(--pine);font-weight:330}
+.fortune.show{animation:sfade 1s var(--soft)}
+.leaves .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+@media (max-width:900px){.leaves .shell{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------------- people ---------------- */
+.people{background:var(--paper-2)}
+.crew{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px}
+.person{display:grid;gap:12px}
+.person .arch{aspect-ratio:3/4;display:grid;place-items:center;background:linear-gradient(170deg,var(--sage),var(--moss))}
+.person .arch span{font-family:var(--serif);font-size:64px;color:#f5f1e8;font-style:italic;font-weight:300}
+.person h3{font-size:24px;color:var(--pine);font-weight:380}
+.person .role{color:var(--buransh);font-size:14.5px;font-weight:500}
+.person p{color:var(--ink-2);font-size:15px}
+@media (max-width:860px){.crew{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.crew{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------------- visit route ---------------- */
+.visit .shell{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.route{background:var(--card);border-radius:32px;padding:clamp(14px,2vw,24px);box-shadow:inset 0 0 0 1px var(--line)}
+.route svg{width:100%;height:auto;overflow:visible}
+.route .path{stroke:var(--buransh);stroke-width:3.5;fill:none;stroke-linecap:round}
+.route .ghost{stroke:var(--line);stroke-width:3.5;fill:none;stroke-dasharray:2 9;stroke-linecap:round}
+.route .stop circle{fill:var(--card);stroke:var(--pine);stroke-width:2.5;transition:fill .5s}
+.route .stop.lit circle{fill:var(--pine)}
+.route .stop text{font-family:var(--sans);font-size:15px;fill:var(--ink)}
+.route .stop text.k{fill:var(--ink-3);font-size:12.5px}
+.route .home circle{fill:var(--buransh);stroke:#fff}
+.route .home text{font-family:var(--serif);font-style:italic;font-size:22px;fill:var(--buransh)}
+.route .hill{fill:none;stroke:var(--sage);stroke-width:1.5}
+.facts{display:grid;gap:18px;margin-top:28px}
+.facts div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.facts dt{font-size:13px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+.facts dd{margin:0;color:var(--ink)}
+.open-now{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--moss);font-weight:500}
+.open-now i{width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 4px rgba(109,138,104,.2)}
+.open-now.shut{color:var(--buransh)}
+@media (max-width:900px){.visit .shell{grid-template-columns:minmax(0,1fr)}.facts div{grid-template-columns:minmax(0,1fr);gap:2px}}
+
+/* ---------------- letters + footer ---------------- */
+.letters{padding-block:clamp(72px,9vw,120px)}
+.envelope{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;background:var(--card);border-radius:36px;padding:clamp(26px,5vw,64px);box-shadow:inset 0 0 0 1px var(--line);position:relative;overflow:hidden}
+.envelope::before{content:"";position:absolute;inset:14px;border-radius:26px;border:1.5px dashed var(--line);pointer-events:none}
+.stamp{position:absolute;top:28px;right:30px;width:74px;height:88px;background:var(--blush);display:grid;place-items:center;transform:rotate(6deg);-webkit-mask:radial-gradient(circle 5px at 5px 5px,transparent 98%,#000) -5px -5px/12px 12px;mask:radial-gradient(circle 5px at 5px 5px,transparent 98%,#000) -5px -5px/12px 12px}
+.stamp svg{width:46px;height:46px;color:var(--buransh)}
+.lform{display:grid;gap:12px;position:relative}
+.lform input[type=text],.lform input[type=email]{height:52px;border-radius:16px;border:0;background:var(--paper);padding:0 18px;box-shadow:inset 0 0 0 1px var(--line);outline:none;font-size:16px}
+.lform input:focus{box-shadow:inset 0 0 0 2px var(--pine)}
+.lform label.ok{display:flex;gap:10px;font-size:14px;color:var(--ink-2);align-items:flex-start}
+.lform label.ok input{margin-top:3px;accent-color:var(--pine);width:17px;height:17px}
+.err{color:var(--buransh);font-size:14px}
+@media (max-width:860px){.envelope{grid-template-columns:minmax(0,1fr)}.stamp{width:58px;height:70px;top:22px;right:22px}}
+.foot{padding-block:70px 40px;background:var(--pine);color:#cfd6cb}
+.foot .big{font-family:var(--serif);font-size:clamp(2.6rem,7vw,6rem);line-height:1;color:#f5f1e8;font-weight:300}
+.foot .big em{font-style:italic;color:#f0a9a7}
+.foot .deva{color:#a9b4a6;font-size:1.3rem;margin-top:10px}
+.foot__cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:56px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:14.5px}
+.foot__cols h4{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#f5f1e8;font-weight:500;margin-bottom:8px}
+.foot a{color:#f5f1e8}
+@media (max-width:760px){.foot__cols{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------------- tray (bottom sheet) ---------------- */
+.trayfab{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);z-index:65;display:flex;align-items:center;gap:14px;height:58px;padding:0 8px 0 22px;border-radius:999px;background:var(--pine);color:var(--paper);box-shadow:0 16px 40px rgba(29,58,46,.35);transition:transform .7s var(--soft)}
+.trayfab.up{transform:translate(-50%,0)}
+.trayfab{white-space:nowrap}
+.trayfab .count{font-family:var(--serif);font-size:19px}
+@media (max-width:420px){.trayfab{gap:10px;padding-left:16px;height:54px}.trayfab .count{font-size:16px}.trayfab .go{padding:0 14px;height:40px}}
+.trayfab .go{height:44px;padding:0 18px;border-radius:999px;background:var(--buransh);color:#fff;font-weight:500;display:flex;align-items:center}
+.trayfab.bump{animation:bump .6s var(--soft)}
+@keyframes bump{40%{transform:translate(-50%,-8px) scale(1.04)}}
+.veil{position:fixed;inset:0;background:rgba(20,32,26,.4);z-index:80;opacity:0;pointer-events:none;transition:opacity .5s}
+.veil.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:50%;bottom:0;z-index:81;width:min(560px,100%);max-height:88vh;max-height:88svh;background:var(--paper);border-radius:30px 30px 0 0;transform:translate(-50%,105%);transition:transform .7s var(--soft);display:flex;flex-direction:column;box-shadow:0 -20px 60px rgba(0,0,0,.2);padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet.on{transform:translate(-50%,0)}
+.sheet .grab{width:44px;height:5px;border-radius:3px;background:var(--line);margin:10px auto 0}
+.sheet header{display:flex;justify-content:space-between;align-items:center;padding:14px 24px 10px}
+.sheet header h3{font-size:28px;color:var(--pine);font-weight:350}
+.sheet .close{width:40px;height:40px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center}
+.sheet .close svg{width:14px;height:14px}
+.sheet .body{overflow-y:auto;padding:0 24px 12px;overscroll-behavior:contain}
+.sheet footer{padding:14px 24px 22px;border-top:1px solid var(--line);display:grid;gap:12px}
+.tline{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line)}
+.tline img,.tline .swatch{width:56px;height:56px;border-radius:28px 28px 10px 10px;object-fit:cover;background:var(--stone)}
+.tline b{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--pine);display:block;line-height:1.2}
+.tline small{color:var(--ink-3);font-size:13px}
+.qty{display:inline-flex;align-items:center;gap:6px}
+.qty button{width:30px;height:30px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line);font-size:16px;line-height:1}
+.qty span{min-width:18px;text-align:center;font-weight:600}
+.when{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.when button{padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);font-size:14px}
+.when button[aria-pressed="true"]{background:var(--pine);color:var(--paper);box-shadow:none}
+.sheet .lform input{background:var(--card)}
+.total{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--serif);font-size:24px;color:var(--pine)}
+.total small{font-family:var(--sans);font-size:13px;color:var(--ink-3)}
+.token{text-align:center;padding:30px 0 10px;display:grid;gap:8px;justify-items:center}
+.token .num{width:120px;height:120px;border-radius:999px 999px 26px 26px;background:var(--buransh);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:54px;animation:tick .9s var(--soft)}
+.token h4{font-size:26px;color:var(--pine)}
+.token p{color:var(--ink-2);max-width:34ch}
+.payopts{display:grid;gap:8px;margin-top:8px}
+.payopt{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:18px;box-shadow:inset 0 0 0 1px var(--line);cursor:pointer;transition:box-shadow .3s,background .3s}
+.payopt input{margin-top:4px;accent-color:var(--pine);width:18px;height:18px;flex:none}
+.payopt b{display:block;font-family:var(--serif);font-weight:400;font-size:18px;color:var(--pine)}
+.payopt small{color:var(--ink-2);font-size:13px;line-height:1.4}
+.payopt:has(input:checked){box-shadow:inset 0 0 0 2px var(--pine);background:var(--card)}
+.payfail{color:var(--buransh);font-size:14px;text-align:center}
+.empty-tray{text-align:center;padding:40px 0;color:var(--ink-2);font-family:var(--serif);font-style:italic;font-size:20px}
+
+.toast{position:fixed;left:50%;top:84px;transform:translate(-50%,-20px);z-index:90;background:var(--card);color:var(--pine);padding:10px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.12),inset 0 0 0 1px var(--line);font-size:14.5px;opacity:0;transition:all .5s var(--soft);pointer-events:none;white-space:nowrap}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+
+<header class="top" id="top">
+  <div class="top__in">
+    <a class="brand" href="#home" aria-label="Buransh home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="var(--buransh)"><ellipse cx="16" cy="9" rx="4.2" ry="6.5"/><ellipse cx="16" cy="9" rx="4.2" ry="6.5" transform="rotate(72 16 16)"/><ellipse cx="16" cy="9" rx="4.2" ry="6.5" transform="rotate(144 16 16)"/><ellipse cx="16" cy="9" rx="4.2" ry="6.5" transform="rotate(216 16 16)"/><ellipse cx="16" cy="9" rx="4.2" ry="6.5" transform="rotate(288 16 16)"/></g><circle cx="16" cy="16" r="3" fill="var(--honey)"/></svg>
+      <b>Buransh</b>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#brew">Brew</a><a href="#menu">Menu</a><a href="#seasons">Seasons</a><a href="#reserve">Reserve</a><a href="#visit">Visit</a>
+    </nav>
+    <button class="tray-btn" id="tray-open" type="button" aria-label="Open your tray"><span>Tray</span><b class="tnum" id="tray-n">0</b></button>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 7h12M3 11h8"/></svg></button>
+  </div>
+</header>
+<div class="overlay" id="overlay" aria-hidden="true">
+  <button class="x" id="overlay-x" type="button" aria-label="Close menu"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 2l10 10M12 2L2 12"/></svg></button>
+  <a href="#brew">Brew a cup</a><a href="#menu">The menu</a><a href="#seasons">Seasons</a><a href="#reserve">Reserve a seat</a><a href="#leaves">Tea leaves</a><a href="#visit">Find us</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home" aria-label="Welcome">
+  <svg class="hills" id="hills" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+  <canvas id="mist" aria-hidden="true"></canvas>
+  <div class="hero__copy">
+    <div class="shell">
+      <div>
+        <h1>Slow mornings,<br><em>misty</em> hills.</h1>
+        <p class="deva" lang="hi">पहाड़ की चाय, आराम से</p>
+        <div class="hero__acts">
+          <a class="pill" href="#brew">Brew your cup <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+          <a class="textlink" href="#menu">See the menu</a>
+        </div>
+      </div>
+      <div class="hero__note">
+        <span class="label" id="sky-label">Rajpur Road, Dehradun</span>
+        <p id="sky-line">A Himalayan tea house at the foot of the Mussoorie hills.</p>
+        <button class="sound" id="sound" type="button" aria-pressed="false"><i><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 3l9 5-9 5z"/></svg></i><span id="sound-label">Play the hills</span><span class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span></span></button>
+      </div>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true">Scroll<i></i></div>
+</section>
+
+<!-- RITUAL -->
+<section class="sec ritual" id="about" aria-label="About Buransh">
+  <div class="shell">
+    <figure class="arch ritual__img" data-rise data-zoom><img src="img/room-day.jpg" alt="Morning light in the tea house, with misty hills through big wooden windows" loading="lazy"><figcaption class="caption">Window seats, 8 am. Hills still asleep.</figcaption></figure>
+    <div class="ritual__copy">
+      <span class="label" data-rise>The ritual</span>
+      <p class="big" data-rise style="margin-top:14px">Buransh is a small tea house where Rajpur Road starts to climb. We brew <em>slowly</em>, cook what the hills grow, and never rush you off a window seat.</p>
+      <p class="sec-lead" data-rise>Named after the red rhododendron that covers Uttarakhand every spring. Come for a cup, stay for the fog lifting off the valley.</p>
+      <div class="notes" data-rise>
+        <div><b>7:30 am</b><span>Doors open, first pot brewing</span></div>
+        <div><b>Wood stove</b><span>Lit from November to February</span></div>
+        <div><b>Dogs welcome</b><span>On the porch, with water bowls</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEATHER MOODS -->
+<section class="sec moods" id="moods" aria-label="Weather moods">
+  <div class="shell">
+    <div class="moods__head">
+      <div>
+        <h2 class="sec-title" data-rise>What's the sky<br><em>doing</em> today?</h2>
+        <p class="sec-lead" data-rise>Pick the weather where you are. We'll pour to match.</p>
+      </div>
+      <div class="mood-pick" id="mood-pick" role="group" aria-label="Weather"></div>
+    </div>
+    <div class="stage" id="stage" data-rise>
+      <canvas id="weather" aria-hidden="true"></canvas>
+      <div class="stage__say"><h3 id="mood-title"></h3><p id="mood-text"></p></div>
+      <div class="stage__picks" id="mood-picks"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BREW BUILDER -->
+<section class="sec brew" id="brew" aria-label="Brew your own cup">
+  <div class="shell">
+    <div class="cupwrap">
+      <div class="cupcard" data-rise>
+        <svg viewBox="0 0 300 300" id="cup" aria-hidden="true">
+          <defs>
+            <clipPath id="glass"><path d="M78 92 L222 92 L208 252 Q206 266 192 266 L108 266 Q94 266 92 252 Z"/></clipPath>
+            <linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".25" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          </defs>
+          <g class="steam" id="steam"><path d="M128 74 q-10 -14 0 -28 q10 -14 0 -28"/><path d="M150 70 q-10 -14 0 -28 q10 -14 0 -28"/><path d="M172 74 q-10 -14 0 -28 q10 -14 0 -28"/></g>
+          <g clip-path="url(#glass)">
+            <rect class="liquid" id="liq" x="60" y="266" width="180" height="0" fill="#c98b4a"/>
+            <rect class="foam" id="foam" x="60" y="266" width="180" height="14" fill="#f3e6cf" opacity="0"/>
+            <g id="flecks"></g>
+          </g>
+          <path d="M78 92 L222 92 L208 252 Q206 266 192 266 L108 266 Q94 266 92 252 Z" fill="url(#shine)" stroke="#8d9a91" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M221 120 q34 4 30 40 q-4 34 -36 34" fill="none" stroke="#8d9a91" stroke-width="7" stroke-linecap="round"/>
+          <ellipse cx="150" cy="280" rx="96" ry="10" fill="#1d3a2e" opacity=".08"/>
+        </svg>
+      </div>
+      <div class="yourcup" aria-live="polite">
+        <span class="label">Your cup</span>
+        <h3 id="cup-name">Pick a base to start</h3>
+        <p class="price tnum" id="cup-price">₹0</p>
+      </div>
+      <button class="pill" id="cup-add" type="button" disabled>Add to tray</button>
+    </div>
+    <div>
+      <h2 class="sec-title" data-rise>Brew it<br><em>your</em> way.</h2>
+      <p class="sec-lead" data-rise>Five small choices. We'll make exactly this, and remember it for next time.</p>
+      <div class="steps" id="steps" style="margin-top:40px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="sec menu" id="menu" aria-label="Menu">
+  <div class="shell">
+    <h2 class="sec-title" data-rise>A short menu,<br><em>made slowly.</em></h2>
+    <p class="sec-lead" data-rise>Eighteen things, most of them from these hills. Prices in rupees, taxes included.</p>
+    <div class="menu__bar">
+      <div class="tabs" id="tabs" role="tablist" aria-label="Menu sections"></div>
+      <div class="moodchips" id="moodchips" aria-label="Filter by mood"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- SEASONS -->
+<section class="sec seasons" id="seasons" aria-label="Seasons on the hills">
+  <div class="shell">
+    <div class="wheel" data-rise><svg viewBox="0 0 460 460" id="wheel" role="group" aria-label="Months"></svg></div>
+    <div class="season-card" id="season-card" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- RESERVE -->
+<section class="sec reserve" id="reserve" aria-label="Reserve a seat">
+  <div class="shell">
+    <h2 class="sec-title" data-rise>Pick your<br><em>seat.</em></h2>
+    <p class="sec-lead" data-rise>Window, fireplace, or the porch with the dogs. Tap a table on the plan.</p>
+    <div class="reserve__grid">
+      <div class="plan" data-rise>
+        <svg viewBox="0 0 640 420" id="plan" aria-label="Floor plan"></svg>
+        <div class="legend"><span><i style="background:#2f5a4b"></i>Free</span><span><i style="background:#f0a9a7"></i>Your pick</span><span><i style="background:#2f5a4b;opacity:.4"></i>Taken or too small</span></div>
+      </div>
+      <div class="book" id="book">
+        <div><h4>Day</h4><div class="chiprow" id="days"></div></div>
+        <div><h4>Time</h4><div class="chiprow" id="times"></div></div>
+        <div><h4>How many of you</h4><div class="party"><button type="button" id="p-minus" aria-label="Fewer people">−</button><output id="p-n" class="tnum">2 people</output><button type="button" id="p-plus" aria-label="More people">+</button></div></div>
+        <div class="picked" id="picked">No table picked yet.</div>
+        <div class="field"><label for="r-name">Name for the table</label><input id="r-name" autocomplete="name" maxlength="40"></div>
+        <button class="pill" id="r-go" type="button" disabled>Hold this table</button>
+        <p class="demo-note">Preview: tables are held on this page only, nothing is sent yet.</p>
+        <div id="r-ticket"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEA LEAVES -->
+<section class="sec leaves" id="leaves" aria-label="Read your tea leaves">
+  <div class="shell">
+    <div class="reading">
+      <div class="saucer" id="saucer"><svg viewBox="0 0 420 420" aria-hidden="true" id="leafcup"></svg></div>
+    </div>
+    <div>
+      <h2 class="sec-title" data-rise>Read your<br><em>tea leaves.</em></h2>
+      <p class="sec-lead" data-rise>An old hill-station game. Swirl the cup three times, tip it out, and see what the leaves say.</p>
+      <p class="fortune" id="fortune" aria-live="polite" style="margin-top:30px"></p>
+      <div class="acts"><button class="pill" id="swirl" type="button">Swirl the cup</button><button class="pill ghost" id="fortune-copy" type="button" hidden>Copy it</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section class="sec people" id="people" aria-label="The people">
+  <div class="shell">
+    <h2 class="sec-title" data-rise>The people<br><em>who pour.</em></h2>
+    <p class="sec-lead" data-rise>A small crew from Dehradun, Mussoorie and further up the hills.</p>
+    <div class="crew" id="crew"></div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="sec visit" id="visit" aria-label="Visit">
+  <div class="shell">
+    <div class="route" data-rise><svg viewBox="0 0 640 460" id="route" aria-label="The road from Clock Tower to Mussoorie, with Buransh on Rajpur Road"></svg></div>
+    <div>
+      <h2 class="sec-title" data-rise>Halfway<br><em>up the hill.</em></h2>
+      <p class="sec-lead" data-rise>On Rajpur Road, where the city ends and the climb to Mussoorie begins.</p>
+      <p class="open-now" id="open-now" style="margin-top:18px"><i></i><span></span></p>
+      <dl class="facts">
+        <div><dt>Address</dt><dd id="addr"></dd></div>
+        <div><dt>Hours</dt><dd>7:30 am to 10:30 pm, every day</dd></div>
+        <div><dt>Getting here</dt><dd>About 20 minutes from Clock Tower by auto. On the way up to Mussoorie, so stop on the drive.</dd></div>
+        <div><dt>Parking</dt><dd>A few spots on the lane. Easier on a scooty.</dd></div>
+      </dl>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px"><a class="pill" href="https://www.google.com/maps/search/?api=1&amp;query=Rajpur+Road+Dehradun" target="_blank" rel="noopener">Open in Maps</a><button class="pill ghost" type="button" id="copy-addr">Copy address</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- LETTERS -->
+<section class="letters" aria-label="Letters from the hills">
+  <div class="shell">
+    <div class="envelope" data-rise>
+      <span class="stamp" aria-hidden="true"><svg viewBox="0 0 32 32"><g fill="currentColor"><ellipse cx="16" cy="9" rx="4.2" ry="6.5"/><ellipse cx="16" cy="9" rx="4.2" ry="6.5" transform="rotate(72 16 16)"/><ellipse cx="16" cy="9" rx="4.2" ry="6.5" transform="rotate(144 16 16)"/><ellipse cx="16" cy="9" rx="4.2" ry="6.5" transform="rotate(216 16 16)"/><ellipse cx="16" cy="9" rx="4.2" ry="6.5" transform="rotate(288 16 16)"/></g></svg></span>
+      <div>
+        <h2 class="sec-title" style="font-size:clamp(2.2rem,4.6vw,3.6rem)">Letters from<br><em>the hills.</em></h2>
+        <p class="sec-lead">One short letter a month: what's in season, the new brew, and when the buransh flowers come in.</p>
+      </div>
+      <form class="lform" id="letter" novalidate>
+        <input type="text" id="l-name" placeholder="Your name" autocomplete="name" maxlength="50" aria-label="Your name">
+        <input type="email" id="l-mail" placeholder="Email address" autocomplete="email" maxlength="120" aria-label="Email address">
+        <label class="ok"><input type="checkbox" id="l-ok"><span>Yes, send me the monthly letter. I can unsubscribe whenever I like.</span></label>
+        <p class="err" id="l-err" role="alert" hidden></p>
+        <button class="pill" type="submit">Post it</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <p class="big">Phir milenge,<br><em>pahad mein.</em></p>
+    <p class="deva" lang="hi">फिर मिलेंगे, पहाड़ में</p>
+    <div class="foot__cols">
+      <div><h4>Find us</h4><p id="foot-addr"></p></div>
+      <div><h4>Say hello</h4><p>Instagram <span id="foot-ig"></span><br>Walk-ins welcome. Groups of 8 or more, message us a day ahead.</p></div>
+      <div><h4>Good to know</h4><p>Prices include GST. Tell us about allergies when you order; our kitchen is small and shared.</p></div>
+    </div>
+    <p style="margin-top:40px;font-size:13px;opacity:.7">© 2026 Buransh Tea House, Dehradun</p>
+  </div>
+</footer>
+
+<!-- tray -->
+<button class="trayfab" id="trayfab" type="button" aria-label="Open your tray"><span class="count tnum" id="fab-count">1 item</span><span class="tnum" id="fab-total">₹0</span><span class="go">View tray</span></button>
+<div class="veil" id="veil"></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-h" aria-hidden="true" inert>
+  <div class="grab" aria-hidden="true"></div>
+  <header><h3 id="sheet-h">Your tray</h3><button class="close" id="sheet-x" type="button" aria-label="Close tray"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 2l10 10M12 2L2 12"/></svg></button></header>
+  <div class="body" id="sheet-body"></div>
+  <footer id="sheet-foot"></footer>
+</section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+  const qs = (s, r) => (r || document).querySelector(s);
+  const qsa = (s, r) => Array.from((r || document).querySelectorAll(s));
+  const safe = t => String(t).replace(/[&<>"']/g, ch => "&#" + ch.charCodeAt(0) + ";");
+  const rupees = n => "₹" + Number(n).toLocaleString("en-IN");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const tap = ms => { try { navigator.vibrate && !still && navigator.vibrate(ms); } catch (e) {} };
+
+  /* ---------- Site details: edit these ---------- */
+  const SITE = {
+    address: "14 Old Rajpur Road, near Sai Mandir, Dehradun, Uttarakhand 248009",
+    instagram: "@buransh.doon",
+    opens: 7.5, closes: 22.5,
+    people: [
+      {name: "Founder name", role: "Founder · tea buyer", note: "Write a line about yourself and your first cup of pahadi chai."},
+      {name: "Co-founder name", role: "Co-founder · kitchen", note: "Write a line about the food you grew up on."},
+      {name: "Team member", role: "Head brewer", note: "Write a line about them."},
+    ],
+  };
+
+  /* ---------- Menu ---------- */
+  const SECTIONS = [["all", "Everything"], ["brews", "Brews"], ["coffee", "Coffee & cocoa"], ["plates", "Hill plates"], ["sweets", "Sweets"]];
+  const MOODS = [["warming", "Warming"], ["light", "Light"], ["comfort", "Comfort"], ["sweet", "Sweet"], ["vegan", "Vegan"], ["gf", "Gluten-free"]];
+  const DISHES = /*@dishes*/[
+    {id: "buransh-iced-tea", s: "brews", n: "Buransh Iced Tea", l: "बुरांश", d: "Rhododendron flowers steeped cold with lemon and mint. Ruby red, gently tart.", p: 140, m: ["light"], vegan: 1, gf: 1, a: [], st: "We make it in small batches each spring, when the buransh flowers come down from the hills."},
+    {id: "pahadi-chai", s: "brews", n: "Pahadi Masala Chai", l: "पहाड़ी चाय", d: "Strong CTC, milk, cardamom and our house masala, poured in brass.", p: 70, m: ["warming", "comfort"], gf: 1, a: ["milk"], st: "The masala is ground every Monday: cardamom, clove, black pepper, dried ginger."},
+    {id: "kangra-green", s: "brews", n: "Kangra Green with Tulsi", l: "तुलसी", d: "Light green tea from Kangra with holy basil. No milk, no sugar needed.", p: 120, m: ["light"], vegan: 1, gf: 1, a: [], st: "Steeped at 80 degrees for two and a half minutes. Ask for a second infusion, it's free."},
+    {id: "gur-adrak-chai", s: "brews", n: "Gur Adrak Chai", l: "गुड़ अदरक", d: "Ginger-forward chai sweetened with dark jaggery. Kadak, the way the hills like it.", p: 80, m: ["warming", "comfort"], gf: 1, a: ["milk"], st: "Jaggery instead of sugar gives it a caramel edge. Ask for it without milk too."},
+    {id: "timur-tisane", s: "brews", n: "Lemongrass & Timur Tisane", l: "तिमूर", d: "Lemongrass with timur, the tingly Himalayan pepper. Bright and caffeine-free.", p: 130, m: ["light"], vegan: 1, gf: 1, a: [], st: "Timur is a cousin of Sichuan pepper. It makes your lips buzz a little. That's the fun."},
+    {id: "doon-cold-brew", s: "coffee", n: "Doon Cold Brew", l: "", d: "Fourteen-hour cold brew over one big ice cube, with a thread of jaggery syrup.", p: 170, m: ["light"], vegan: 1, gf: 1, a: [], st: "Brewed overnight, every night. When it's gone, it's gone."},
+    {id: "honey-latte", s: "coffee", n: "Cinnamon Honey Latte", l: "", d: "Espresso, steamed milk, wild Himalayan honey and a stick of cinnamon.", p: 180, m: ["warming", "comfort", "sweet"], gf: 1, a: ["milk"], st: "Swap to oat milk for ₹30."},
+    {id: "mithai-hot-chocolate", s: "coffee", n: "Bal Mithai Hot Chocolate", l: "बाल मिठाई", d: "Thick dark hot chocolate topped with crumbled Almora bal mithai.", p: 190, m: ["warming", "sweet", "comfort"], gf: 1, a: ["milk"], st: "Bal mithai is Almora's famous brown fudge rolled in tiny sugar pearls."},
+    {id: "aloo-gutke", s: "plates", n: "Aloo ke Gutke", l: "आलू के गुटके", d: "Potatoes tossed with jakhiya seeds and red chilli, with hemp-seed chutney and two puris.", p: 180, m: ["comfort", "warming"], vegan: 1, a: ["gluten"], st: "Jakhiya is a wild seed from the hills that crackles in hot oil. Ask for it without puris to make it gluten-free."},
+    {id: "mandua-pancakes", s: "plates", n: "Mandua Pancakes", l: "मंडुआ", d: "Finger-millet pancakes with malta marmalade and white butter.", p: 210, m: ["comfort", "sweet"], gf: 1, a: ["milk"], st: "Mandua (ragi) grows on the terraced fields of Garhwal. The malta is a hill orange."},
+    {id: "harsil-rajma", s: "plates", n: "Harsil Rajma Chawal", l: "राजमा चावल", d: "Small red rajma from Harsil, slow-cooked, with rice, ghee and lemon.", p: 220, m: ["comfort", "warming"], gf: 1, a: ["milk"], st: "Harsil rajma is smaller and creamier than the plains kind. It cooks for four hours."},
+    {id: "kafuli-bowl", s: "plates", n: "Kafuli & Jhangora Bowl", l: "काफुली", d: "Garhwali spinach-and-fenugreek curry with barnyard-millet pilaf and curd.", p: 240, m: ["comfort"], gf: 1, a: ["milk"], st: "Kafuli is thickened with a little rice paste, the way it's made in Pauri."},
+    {id: "pahadi-grilled-cheese", s: "plates", n: "Pisyu Loon Grilled Cheese", l: "पिस्यूं लूण", d: "Sourdough, melting cheese and Kumaoni herb salt, with tomato chutney.", p: 190, m: ["comfort"], a: ["gluten", "milk"], st: "Pisyu loon is salt ground on stone with garlic, chilli and green herbs."},
+    {id: "thukpa", s: "plates", n: "Mushroom Thukpa", l: "थुकपा", d: "A nod to Clement Town: noodles in a warm mushroom and leek broth.", p: 220, m: ["warming", "light", "comfort"], vegan: 1, a: ["gluten", "soy"], st: "Dehradun's Tibetan colony taught the whole city to love a bowl of thukpa in the rain."},
+    {id: "bal-mithai-brownie", s: "sweets", n: "Bal Mithai Brownie", l: "", d: "Fudgy brownie topped with Almora bal mithai and its tiny sugar pearls.", p: 150, m: ["sweet"], a: ["gluten", "milk", "egg"], st: "Best warm. Ask us to heat it."},
+    {id: "jhangora-kheer", s: "sweets", n: "Jhangora Kheer", l: "झंगोरे की खीर", d: "Barnyard millet slow-cooked in milk with saffron, almonds and rose.", p: 130, m: ["sweet", "comfort"], gf: 1, a: ["milk", "nuts"], st: "A Garhwali festival dessert, made with the hardy millet that grows up high."},
+    {id: "apple-crumble", s: "sweets", n: "Harsil Apple & Kafal Crumble", l: "काफल", d: "Warm Harsil apples and wild kafal berries under a brown-butter crumble, with ice cream.", p: 180, m: ["sweet", "warming"], a: ["gluten", "milk"], st: "Kafal ripens for just a few weeks in May. The rest of the year we use what we froze."},
+    {id: "singori", s: "sweets", n: "Singori", l: "सिंगोड़ी", d: "Almora's khoa sweet, wrapped in a cone of maalu leaf. Three to a plate.", p: 120, m: ["sweet"], gf: 1, a: ["milk"], st: "The maalu leaf gives the khoa a faint green, woody smell. Unwrap and eat the sweet, not the leaf."},
+  ]/*@end*/;
+  const BYID = Object.fromEntries(DISHES.map(x => [x.id, x]));
+  const pic = id => "img/" + id + ".jpg";
+  const ALLERGY = {milk: "Milk", gluten: "Gluten", egg: "Egg", nuts: "Tree nuts", soy: "Soy"};
+
+  /* ---------- Time in Dehradun ---------- */
+  function doonNow() {
+    const parts = new Intl.DateTimeFormat("en-GB", {timeZone: "Asia/Kolkata", hour: "numeric", minute: "numeric", month: "numeric", hourCycle: "h23"}).formatToParts(new Date());
+    const g = t => +parts.find(p => p.type === t).value;
+    return {h: g("hour"), min: g("minute"), month: g("month") - 1};
+  }
+  const skyFor = h => h >= 5 && h < 8 ? "dawn" : h >= 8 && h < 16 ? "day" : h >= 16 && h < 19 ? "dusk" : "night";
+  const SKY = {
+    dawn: {top: "#f4cdb8", bottom: "#f8e9da", sun: "#f39a6b", layers: ["#c9b2bd", "#a996a8", "#8a7d93", "#5d6278", "#2f3e45"], label: "Dawn over Mussoorie", line: "First light on the ridges. The kettle's already on."},
+    day: {top: "#c7dbe0", bottom: "#eef0ea", sun: "#fff3d6", layers: ["#b9cbc8", "#98b2ab", "#759685", "#4c6d5c", "#1f3a2e"], label: "Morning in the valley", line: "Clear enough to see the Mussoorie ridge. Window seats are free."},
+    dusk: {top: "#e7ad87", bottom: "#f4dcc8", sun: "#f08a5d", layers: ["#c7a0a0", "#a07e88", "#7a6478", "#4e4a5e", "#25303a"], label: "Dusk on Rajpur Road", line: "Golden hour on the hills. Chai and gutke time."},
+    night: {top: "#121b2b", bottom: "#27324a", sun: "#f3ecd8", layers: ["#334058", "#2a364d", "#212c40", "#182233", "#0e1622"], label: "Night in Dehradun", line: "Mussoorie's lights are on up the hill. We're open till 10:30."},
+  };
+
+  /* ---------- Hero: hills, mist, parallax ---------- */
+  const hero = qs("#home"), hills = qs("#hills"), mist = qs("#mist");
+  let skyName = skyFor(doonNow().h);
+  function seeded(seed) { let x = seed; return () => (x = (x * 9301 + 49297) % 233280) / 233280; }
+  function ridge(i, rnd) {
+    const W = 1440, base = 400 + i * 95, amp = 120 - i * 14, f1 = .0028 + i * .0009, f2 = .011 + i * .002, ph1 = rnd() * 6.28, ph2 = rnd() * 6.28;
+    let d = `M0 900 L0 ${base}`;
+    const pts = [];
+    for (let x = 0; x <= W; x += 12) {
+      const y = base - amp * (.6 * Math.sin(x * f1 + ph1) + .3 * Math.sin(x * f2 + ph2) + .1 * Math.sin(x * .05 + i)) - (i === 0 ? 90 * Math.exp(-Math.pow((x - 980) / 240, 2)) : 0);
+      d += ` L${x} ${y.toFixed(1)}`; pts.push([x, y]);
+    }
+    return {d: d + ` L${W} 900 Z`, pts};
+  }
+  function drawHills() {
+    const rnd = seeded(29), S = SKY[skyName];
+    let svg = `<defs><linearGradient id="skyg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${S.top}"/><stop offset="1" stop-color="${S.bottom}"/></linearGradient></defs><rect width="1440" height="900" fill="url(#skyg)"/>`;
+    if (skyName === "night") for (let k = 0; k < 90; k++) svg += `<circle cx="${(rnd() * 1440).toFixed(0)}" cy="${(rnd() * 420).toFixed(0)}" r="${(rnd() * 1.3 + .3).toFixed(2)}" fill="#fff" opacity="${(rnd() * .7 + .2).toFixed(2)}"/>`;
+    const sunY = {dawn: 330, day: 170, dusk: 300, night: 160}[skyName];
+    svg += `<g class="layer" data-depth="0.02"><circle cx="${skyName === "dusk" ? 340 : 1080}" cy="${sunY}" r="${skyName === "night" ? 34 : 54}" fill="${S.sun}" opacity="${skyName === "day" ? .9 : 1}"/></g>`;
+    for (let i = 0; i < 5; i++) {
+      const r = ridge(i, rnd);
+      svg += `<g class="layer" data-depth="${(0.05 + i * 0.06).toFixed(2)}"><path d="${r.d}" fill="${S.layers[i]}"/>`;
+      if (i >= 3) { // pines along the nearer ridges
+        for (let k = 0; k < r.pts.length; k += i === 4 ? 2 : 4) {
+          if (rnd() < (i === 4 ? .55 : .35)) {
+            const [x, y] = r.pts[k], hgt = (i === 4 ? 46 : 26) * (.6 + rnd() * .7), w = hgt * .32;
+            svg += `<path d="M${x} ${(y - hgt).toFixed(1)} L${(x + w).toFixed(1)} ${(y + 4).toFixed(1)} L${(x - w).toFixed(1)} ${(y + 4).toFixed(1)}Z" fill="${S.layers[i]}"/>`;
+          }
+        }
+      }
+      svg += `</g>`;
+    }
+    hills.innerHTML = svg;
+    hero.dataset.sky = skyName;
+    hero.style.setProperty("--sky-b", S.bottom);
+    qs("#sky-label").textContent = S.label;
+    qs("#sky-line").textContent = S.line;
+    qs("#top").classList.toggle("night", skyName === "night");
+  }
+  drawHills();
+  setInterval(() => { const n = skyFor(doonNow().h); if (n !== skyName) { skyName = n; drawHills(); } }, 60000);
+
+  // parallax from pointer, tilt and scroll
+  let px = 0, py = 0, tx = 0, ty = 0, sy = 0;
+  addEventListener("pointermove", e => { tx = (e.clientX / innerWidth - .5) * 2; ty = (e.clientY / innerHeight - .5) * 2; }, {passive: true});
+  addEventListener("deviceorientation", e => { if (e.gamma == null) return; tx = Math.max(-1, Math.min(1, e.gamma / 30)); ty = Math.max(-1, Math.min(1, (e.beta - 40) / 30)); }, {passive: true});
+  addEventListener("scroll", () => { sy = scrollY; }, {passive: true});
+  function parallax() {
+    px += (tx - px) * .05; py += (ty - py) * .05;
+    if (sy < innerHeight * 1.2) qsa(".layer", hills).forEach(g => {
+      const dpt = +g.dataset.depth;
+      g.style.transform = `translate(${(-px * dpt * 120).toFixed(1)}px, ${(-py * dpt * 40 + sy * dpt * 1.4).toFixed(1)}px)`;
+    });
+    requestAnimationFrame(parallax);
+  }
+  if (!still) requestAnimationFrame(parallax);
+
+  // drifting mist
+  (function fog() {
+    const g = mist.getContext("2d"); let W = 0, H = 0;
+    const blobs = Array.from({length: 16}, (_, i) => ({x: Math.random(), y: .45 + Math.random() * .45, r: .12 + Math.random() * .2, v: (.00004 + Math.random() * .00008) * (i % 2 ? 1 : -1), a: .18 + Math.random() * .22}));
+    function size() { const dpr = Math.min(devicePixelRatio || 1, 1.5); W = mist.clientWidth; H = mist.clientHeight; mist.width = W * dpr; mist.height = H * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0); }
+    size(); addEventListener("resize", size);
+    function frame() {
+      g.clearRect(0, 0, W, H);
+      const tint = skyName === "night" ? "200,210,230" : "255,255,255";
+      for (const b of blobs) {
+        b.x += b.v; if (b.x > 1.3) b.x = -.3; if (b.x < -.3) b.x = 1.3;
+        const R = b.r * W, cx = b.x * W, cy = b.y * H - sy * .2;
+        const grd = g.createRadialGradient(cx, cy, 0, cx, cy, R);
+        grd.addColorStop(0, `rgba(${tint},${skyName === "night" ? b.a * .4 : b.a})`); grd.addColorStop(1, `rgba(${tint},0)`);
+        g.fillStyle = grd; g.beginPath(); g.ellipse(cx, cy, R, R * .38, 0, 0, 6.283); g.fill();
+      }
+      if (!still && sy < innerHeight * 1.2) requestAnimationFrame(frame); else setTimeout(() => requestAnimationFrame(frame), 400);
+    }
+    frame();
+  })();
+
+  /* ---------- Header + overlay ---------- */
+  const top = qs("#top");
+  addEventListener("scroll", () => top.classList.toggle("solid", scrollY > innerHeight * .7), {passive: true});
+  const overlay = qs("#overlay"), burger = qs("#burger");
+  const setOverlay = on => { overlay.classList.toggle("open", on); overlay.setAttribute("aria-hidden", !on); burger.setAttribute("aria-expanded", on); document.body.style.overflow = on ? "hidden" : ""; };
+  burger.onclick = () => setOverlay(true);
+  qs("#overlay-x").onclick = () => setOverlay(false);
+  qsa("a", overlay).forEach(a => a.addEventListener("click", () => setOverlay(false)));
+
+  /* ---------- Reveal on scroll ---------- */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {rootMargin: "0px 0px -8% 0px"});
+  const watch = () => qsa("[data-rise]:not(.in)").forEach(el => io.observe(el));
+  watch();
+
+  /* ---------- Sound of the hills (synthesised, no files) ---------- */
+  const Sound = {
+    ctx: null, on: false, mood: "sun", master: null, noise: null, filt: null, ng: null, timer: 0,
+    boot() {
+      const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return false;
+      const c = this.ctx = new AC();
+      const len = c.sampleRate * 3, buf = c.createBuffer(1, len, c.sampleRate), d = buf.getChannelData(0);
+      let last = 0; for (let i = 0; i < len; i++) { const w = Math.random() * 2 - 1; last = (last + .02 * w) / 1.02; d[i] = last * 3.2; } // brown noise
+      this.noise = c.createBufferSource(); this.noise.buffer = buf; this.noise.loop = true;
+      this.filt = c.createBiquadFilter(); this.ng = c.createGain(); this.master = c.createGain(); this.master.gain.value = 0;
+      this.noise.connect(this.filt).connect(this.ng).connect(this.master).connect(c.destination); this.noise.start();
+      return true;
+    },
+    set(mood) {
+      this.mood = mood; if (!this.ctx) return;
+      const t = this.ctx.currentTime, f = this.filt.frequency, g = this.ng.gain;
+      const cfg = {sun: ["lowpass", 900, .12], rain: ["lowpass", 3200, .55], fog: ["lowpass", 420, .5], cold: ["lowpass", 700, .22]}[mood];
+      this.filt.type = cfg[0]; f.setTargetAtTime(cfg[1], t, .6); g.setTargetAtTime(cfg[2], t, .6);
+    },
+    blip() { // birdsong in sun, drips in rain, crackle by the stove, wind gusts in fog
+      if (!this.on) return;
+      const c = this.ctx, t = c.currentTime, o = c.createOscillator(), g = c.createGain();
+      o.connect(g).connect(this.master);
+      if (this.mood === "sun") { o.type = "sine"; o.frequency.setValueAtTime(2600 + Math.random() * 900, t); o.frequency.exponentialRampToValueAtTime(3800 + Math.random() * 800, t + .09); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.05, t + .02); g.gain.exponentialRampToValueAtTime(.0001, t + .16); o.start(t); o.stop(t + .18); }
+      else if (this.mood === "rain") { o.type = "triangle"; o.frequency.setValueAtTime(900 + Math.random() * 1400, t); g.gain.setValueAtTime(.04, t); g.gain.exponentialRampToValueAtTime(.0001, t + .05); o.start(t); o.stop(t + .06); }
+      else if (this.mood === "cold") { o.type = "square"; o.frequency.setValueAtTime(120 + Math.random() * 300, t); g.gain.setValueAtTime(.03, t); g.gain.exponentialRampToValueAtTime(.0001, t + .03); o.start(t); o.stop(t + .04); }
+      else { o.disconnect(); this.filt.frequency.setTargetAtTime(300 + Math.random() * 500, t, 1.2); }
+      const gap = {sun: 700 + Math.random() * 2600, rain: 40 + Math.random() * 160, cold: 90 + Math.random() * 700, fog: 1800 + Math.random() * 1500}[this.mood];
+      this.timer = setTimeout(() => this.blip(), gap);
+    },
+    toggle() {
+      if (!this.ctx && !this.boot()) return false;
+      this.on = !this.on;
+      if (this.ctx.state === "suspended") this.ctx.resume();
+      this.master.gain.setTargetAtTime(this.on ? .5 : 0, this.ctx.currentTime, .5);
+      clearTimeout(this.timer); if (this.on) { this.set(this.mood); this.blip(); }
+      return this.on;
+    },
+  };
+  const soundBtn = qs("#sound");
+  soundBtn.onclick = () => {
+    const on = Sound.toggle(); tap(8);
+    soundBtn.setAttribute("aria-pressed", on);
+    qs("#sound-label").textContent = on ? "Sound on" : "Play the hills";
+  };
+
+  /* ---------- Weather moods ---------- */
+  const ICON = {
+    sun: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>`,
+    rain: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15.5a4.5 4.5 0 1 1 1.2-8.8A5.5 5.5 0 0 1 19 8.5a3.5 3.5 0 0 1-.5 7H7z"/><path d="M8.5 18.5l-1 2.5M12.5 18.5l-1 2.5M16.5 18.5l-1 2.5"/></svg>`,
+    fog: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9h14M6 13h15M3 17h12"/><path d="M18 9h3"/></svg>`,
+    cold: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2.5v19M3.8 7.2l16.4 9.6M3.8 16.8l16.4-9.6M9.5 4.5L12 6.5l2.5-2M9.5 19.5L12 17.5l2.5 2"/></svg>`,
+  };
+  const WEATHER = {
+    sun: {name: "Sunny", title: "Bright out?<br><em>Keep it cold and clean.</em>", text: "Iced buransh on the porch, or a cold brew by the open window.", picks: ["buransh-iced-tea", "doon-cold-brew", "timur-tisane"], bg: "#dfe7d9", ink: "#1d3a2e"},
+    rain: {name: "Raining", title: "Monsoon on<br><em>the windows.</em>", text: "Gur adrak chai, a plate of gutke, and nowhere to be for a while.", picks: ["gur-adrak-chai", "aloo-gutke", "thukpa"], bg: "#9fb1b4", ink: "#14262a"},
+    fog: {name: "Foggy", title: "Dhund over<br><em>the valley.</em>", text: "The hills disappear for the morning. Take it slow with a pot of green.", picks: ["kangra-green", "pahadi-chai", "mandua-pancakes"], bg: "#d9dcd6", ink: "#2a3a33"},
+    cold: {name: "Cold", title: "Wood stove<br><em>weather.</em>", text: "Shawls on, stove lit. Thick hot chocolate and a warm crumble.", picks: ["mithai-hot-chocolate", "harsil-rajma", "apple-crumble"], bg: "#c9c3d3", ink: "#2b2340"},
+  };
+  const wx = qs("#weather"), wg = wx.getContext("2d");
+  let wMood = (() => { const {month, h} = doonNow(); return month >= 6 && month <= 8 ? "rain" : month === 11 || month <= 1 ? "cold" : h < 10 ? "fog" : "sun"; })();
+  qs("#mood-pick").innerHTML = Object.entries(WEATHER).map(([k, v]) => `<button type="button" data-w="${k}" aria-pressed="${k === wMood}">${ICON[k]}${v.name}</button>`).join("");
+  function setMood(k, user) {
+    wMood = k; const v = WEATHER[k];
+    qsa("#mood-pick button").forEach(b => b.setAttribute("aria-pressed", b.dataset.w === k));
+    const st = qs("#stage"); st.style.setProperty("--stage", v.bg); st.style.setProperty("--stage-ink", v.ink); st.style.setProperty("--stage-img", `url(img/${k === "rain" || k === "cold" ? "room-rain" : "room-day"}.jpg)`);
+    qs("#mood-title").innerHTML = v.title; qs("#mood-text").textContent = v.text;
+    const picks = qs("#mood-picks"); picks.classList.remove("swap"); void picks.offsetWidth; picks.classList.add("swap");
+    picks.innerHTML = v.picks.map(id => { const x = BYID[id]; return `<article class="pick"><figure><img src="${pic(id)}" alt="${safe(x.n)}" loading="lazy"></figure><div><b>${safe(x.n)}</b><div class="row"><span class="tnum">${rupees(x.p)}</span><button class="plus" type="button" data-add="${id}" aria-label="Add ${safe(x.n)} to tray"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 2v10M2 7h10"/></svg></button></div></div></article>`; }).join("");
+    Sound.set(k);
+    if (user) tap(8);
+  }
+  qs("#mood-pick").onclick = e => { const b = e.target.closest("[data-w]"); if (b) setMood(b.dataset.w, true); };
+  setMood(wMood);
+  (function weatherFx() {
+    let W = 0, H = 0, drops = [], vis = false;
+    function size() { const dpr = Math.min(devicePixelRatio || 1, 1.5); W = wx.clientWidth; H = wx.clientHeight; wx.width = W * dpr; wx.height = H * dpr; wg.setTransform(dpr, 0, 0, dpr, 0, 0); }
+    new ResizeObserver(size).observe(wx); size();
+    new IntersectionObserver(([e]) => { vis = e.isIntersecting; }).observe(wx);
+    for (let i = 0; i < 160; i++) drops.push({x: Math.random(), y: Math.random(), z: Math.random(), s: Math.random()});
+    function frame(t) {
+      requestAnimationFrame(frame);
+      if (!vis || still) return;
+      wg.clearRect(0, 0, W, H);
+      if (wMood === "rain") {
+        wg.strokeStyle = "rgba(255,255,255,.55)"; wg.lineWidth = 1.2; wg.beginPath();
+        for (const d of drops) { d.y += .012 + d.z * .02; d.x -= .002; if (d.y > 1) { d.y = -.05; d.x = Math.random() * 1.1; } const x = d.x * W, y = d.y * H, L = 10 + d.z * 18; wg.moveTo(x, y); wg.lineTo(x - L * .18, y + L); }
+        wg.stroke();
+      } else if (wMood === "cold") {
+        wg.fillStyle = "rgba(255,255,255,.85)";
+        for (const d of drops) { d.y += .0012 + d.z * .002; d.x += Math.sin(t / 900 + d.s * 10) * .0006; if (d.y > 1) { d.y = -.02; d.x = Math.random(); } wg.beginPath(); wg.arc(d.x * W, d.y * H, 1 + d.z * 2.4, 0, 6.283); wg.fill(); }
+      } else if (wMood === "fog") {
+        for (let i = 0; i < 6; i++) { const y = H * (.2 + i * .14), off = Math.sin(t / 4000 + i) * W * .1; const gr = wg.createLinearGradient(0, y - 40, 0, y + 40); gr.addColorStop(0, "rgba(255,255,255,0)"); gr.addColorStop(.5, "rgba(255,255,255,.35)"); gr.addColorStop(1, "rgba(255,255,255,0)"); wg.fillStyle = gr; wg.fillRect(off - W * .2, y - 40, W * 1.4, 80); }
+      } else {
+        const cx = W * .88, cy = H * .12;
+        for (let i = 0; i < 9; i++) { const a = t / 9000 + i * .7, len = H * 1.4; const gr = wg.createLinearGradient(cx, cy, cx + Math.cos(a + 1.9) * len, cy + Math.sin(a + 1.9) * len); gr.addColorStop(0, "rgba(255,248,220,.35)"); gr.addColorStop(1, "rgba(255,248,220,0)"); wg.fillStyle = gr; wg.beginPath(); wg.moveTo(cx, cy); wg.lineTo(cx + Math.cos(a + 1.85) * len, cy + Math.sin(a + 1.85) * len); wg.lineTo(cx + Math.cos(a + 1.95) * len, cy + Math.sin(a + 1.95) * len); wg.fill(); }
+      }
+    }
+    requestAnimationFrame(frame);
+  })();
+
+  /* ---------- Brew builder ---------- */
+  const BASES = /*@bases*/[["kangra", "Kangra green", 90, "#c6b15e", "light"], ["assam", "Assam CTC", 70, "#93501f", "strong"], ["buransh", "Buransh & hibiscus", 100, "#a52a35", "floral"], ["tulsi", "Tulsi & lemongrass", 90, "#b8a648", "calm"], ["coffee", "Doon espresso", 110, "#3a2416", "bold"]]/*@end*/;
+  const MILKS = /*@milks*/[["none", "No milk", 0], ["cow", "Cow's milk", 20], ["oat", "Oat milk", 40]]/*@end*/;
+  const SWEETS = /*@sweets*/[["none", "Unsweetened", 0, ""], ["gur", "Gur (jaggery)", 0, "Gur"], ["honey", "Wild honey", 20, "Honey"], ["mishri", "Mishri", 0, "Mishri"]]/*@end*/;
+  const SPICES = /*@spices*/[["ginger", "Ginger", "#d4a34a", "Adrak"], ["cardamom", "Cardamom", "#7d9b5a", "Elaichi"], ["tulsi", "Tulsi", "#4f7d4a", "Tulsi"], ["timur", "Timur", "#a8433b", "Timur"], ["cinnamon", "Cinnamon", "#8a5a33", "Dalchini"]]/*@end*/;
+  const cup = {base: null, milk: "none", sweet: "none", spices: new Set(), strength: 2};
+  const choiceBtn = (group, key, title, sub, color, pressed) => `<button class="choice" type="button" data-g="${group}" data-k="${key}" aria-pressed="${pressed}">${color ? `<i style="background:${color}"></i>` : ""}<span><b>${title}</b>${sub ? `<small>${sub}</small>` : ""}</span></button>`;
+  function drawSteps() {
+    qs("#steps").innerHTML =
+      `<div class="step" data-rise><h4><span>i.</span> The leaf</h4><div class="choices">${BASES.map(b => choiceBtn("base", b[0], b[1], `${rupees(b[2])} · ${b[4]}`, b[3], cup.base === b[0])).join("")}</div></div>` +
+      `<div class="step" data-rise><h4><span>ii.</span> Milk</h4><div class="choices">${MILKS.map(m => choiceBtn("milk", m[0], m[1], m[2] ? "+" + rupees(m[2]) : "", "", cup.milk === m[0])).join("")}</div></div>` +
+      `<div class="step" data-rise><h4><span>iii.</span> Something sweet</h4><div class="choices">${SWEETS.map(s => choiceBtn("sweet", s[0], s[1], s[2] ? "+" + rupees(s[2]) : "", "", cup.sweet === s[0])).join("")}</div></div>` +
+      `<div class="step" data-rise><h4><span>iv.</span> A little spice <small style="text-transform:none;letter-spacing:0">(pick any, ₹10 each)</small></h4><div class="choices">${SPICES.map(s => choiceBtn("spice", s[0], s[1], s[3], s[2], cup.spices.has(s[0]))).join("")}</div></div>` +
+      `<div class="step" data-rise><h4><span>v.</span> How strong</h4><div class="strength"><input type="range" min="1" max="3" step="1" value="${cup.strength}" id="strength" aria-label="Strength"><div class="ticks"><span data-v="1">Halki · light</span><span data-v="2">Theek · just right</span><span data-v="3">Kadak · strong</span></div></div></div>`;
+    qs("#strength").oninput = e => { cup.strength = +e.target.value; paintCup(); tap(5); };
+    watch();
+  }
+  qs("#steps").addEventListener("click", e => {
+    const b = e.target.closest(".choice"); if (!b) return;
+    const g = b.dataset.g, k = b.dataset.k;
+    if (g === "spice") { cup.spices.has(k) ? cup.spices.delete(k) : cup.spices.add(k); b.setAttribute("aria-pressed", cup.spices.has(k)); }
+    else { cup[g] = k; qsa(`.choice[data-g="${g}"]`).forEach(x => x.setAttribute("aria-pressed", x.dataset.k === k)); }
+    tap(6); paintCup();
+  });
+  function mix(a, b, t) { const p = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)); const A = p(a), B = p(b); return "#" + A.map((v, i) => Math.round(v + (B[i] - v) * t).toString(16).padStart(2, "0")).join(""); }
+  function cupPrice() { if (!cup.base) return 0; return BASES.find(b => b[0] === cup.base)[2] + MILKS.find(m => m[0] === cup.milk)[2] + SWEETS.find(s => s[0] === cup.sweet)[2] + cup.spices.size * 10; }
+  function cupName() {
+    if (!cup.base) return "Pick a base to start";
+    const B = BASES.find(b => b[0] === cup.base)[1];
+    const strong = cup.strength === 3 ? "Kadak " : cup.strength === 1 ? "Halki " : "";
+    const sw = SWEETS.find(s => s[0] === cup.sweet)[3];
+    const sp = [...cup.spices].map(k => SPICES.find(s => s[0] === k)[3]);
+    const milk = cup.milk === "oat" ? " with oat milk" : cup.milk === "cow" ? " with milk" : "";
+    return `${strong}${sp.length ? sp.join(" ") + " " : ""}${sw ? sw + " " : ""}${B}${milk}`.replace(/\s+/g, " ");
+  }
+  function paintCup() {
+    qsa(".strength .ticks span").forEach(s => s.setAttribute("aria-current", +s.dataset.v === cup.strength));
+    const liq = qs("#liq"), foam = qs("#foam");
+    if (!cup.base) { liq.setAttribute("y", 266); liq.setAttribute("height", 0); }
+    else {
+      let c = BASES.find(b => b[0] === cup.base)[3];
+      c = mix(c, "#000000", (cup.strength - 2) * .18 > 0 ? (cup.strength - 2) * .18 : 0);
+      c = cup.strength === 1 ? mix(c, "#ffffff", .22) : c;
+      if (cup.milk !== "none") c = mix(c, cup.milk === "oat" ? "#efe2c6" : "#f4ead8", .48);
+      liq.setAttribute("fill", c); liq.setAttribute("y", 112); liq.setAttribute("height", 160);
+      foam.setAttribute("y", 108); foam.setAttribute("opacity", cup.milk !== "none" ? .95 : 0);
+    }
+    qs("#flecks").innerHTML = [...cup.spices].map((k, i) => { const col = SPICES.find(s => s[0] === k)[2]; let out = ""; for (let j = 0; j < 7; j++) out += `<circle class="fleck" cx="${100 + ((i * 37 + j * 23) % 100)}" cy="${140 + ((i * 29 + j * 41) % 110)}" r="${2 + (j % 3)}" fill="${col}" opacity=".8"><animate attributeName="cy" dur="${3 + j % 3}s" values="${140 + ((i * 29 + j * 41) % 110)};${126 + ((i * 29 + j * 41) % 110)};${140 + ((i * 29 + j * 41) % 110)}" repeatCount="indefinite"/></circle>`; return out; }).join("");
+    qs("#steam").style.display = cup.base && cup.base !== "buransh" ? "" : "none";
+    qs("#cup-name").textContent = cupName();
+    qs("#cup-price").textContent = rupees(cupPrice());
+    qs("#cup-add").disabled = !cup.base;
+  }
+  drawSteps(); paintCup();
+  qs("#cup-add").onclick = () => {
+    const id = "brew:" + [cup.base, cup.milk, cup.sweet, [...cup.spices].sort().join("+"), cup.strength].join("|");
+    const color = qs("#liq").getAttribute("fill");
+    addToTray(id, {n: cupName(), p: cupPrice(), swatch: color});
+    toast(`${cupName()} is on your tray`);
+  };
+
+  /* ---------- Menu ---------- */
+  let section = "all"; const moodsOn = new Set();
+  qs("#tabs").innerHTML = SECTIONS.map(([k, v]) => `<button type="button" role="tab" data-s="${k}" aria-selected="${k === section}">${v}</button>`).join("");
+  qs("#moodchips").innerHTML = MOODS.map(([k, v]) => `<button type="button" data-m="${k}" aria-pressed="false">${v}</button>`).join("");
+  const fits = x => [...moodsOn].every(m => m === "vegan" ? x.vegan : m === "gf" ? x.gf : x.m.includes(m));
+  function drawMenu() {
+    const list = DISHES.filter(x => (section === "all" || x.s === section) && fits(x));
+    qs("#grid").innerHTML = list.length ? list.map(x => `
+      <article class="mc" data-rise>
+        <figure><img src="${pic(x.id)}" alt="${safe(x.n)}" loading="lazy"><button class="plus" type="button" data-add="${x.id}" aria-label="Add ${safe(x.n)} to tray"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 2v10M2 7h10"/></svg></button></figure>
+        <div class="mc__top"><h3>${safe(x.n)}</h3><span class="price tnum">${rupees(x.p)}</span></div>
+        ${x.l ? `<p class="local" lang="hi">${x.l}</p>` : ""}
+        <p class="d">${safe(x.d)}</p>
+        <div class="mc__meta">${x.vegan ? `<span class="vg">Vegan</span>` : ""}${x.gf ? `<span class="vg">Gluten-free</span>` : ""}${x.a.length ? x.a.map(a => `<span>${ALLERGY[a]}</span>`).join("") : `<span>No common allergens</span>`}</div>
+        <details><summary>The story</summary><p>${safe(x.st)}</p></details>
+      </article>`).join("") : `<p class="nothing">Nothing fits all of those. Try one less.</p>`;
+    watch();
+  }
+  qs("#tabs").onclick = e => { const b = e.target.closest("[data-s]"); if (!b) return; section = b.dataset.s; qsa("#tabs button").forEach(x => x.setAttribute("aria-selected", x === b)); drawMenu(); tap(5); };
+  qs("#moodchips").onclick = e => { const b = e.target.closest("[data-m]"); if (!b) return; const k = b.dataset.m; moodsOn.has(k) ? moodsOn.delete(k) : moodsOn.add(k); b.setAttribute("aria-pressed", moodsOn.has(k)); drawMenu(); tap(5); };
+  drawMenu();
+
+  /* ---------- Seasons wheel ---------- */
+  const MONTHS = [
+    ["Jan", "January", "Malta season", "The hill oranges are in: sweet, a little bitter, best with salt and chilli.", "Malta chaat with pisyu loon", "Uttarayani mela in Bageshwar mid-month."],
+    ["Feb", "February", "Mustard greens & gahat", "Cold mornings, green fields. We cook gahat dal soup for the stove.", "Gahat soup with mandua roti", "Basant Panchami: yellow kesar kheer on the day."],
+    ["Mar", "March", "Buransh blooms", "The rhododendrons turn the slopes red. Our namesake month.", "Fresh buransh sharbat", "Phool Dei: children leave flowers on doorsteps."],
+    ["Apr", "April", "Last of the buransh", "Warm afternoons, cool nights. The porch reopens for good.", "Buransh iced tea on tap", "Baisakhi fairs along the river."],
+    ["May", "May", "Kafal", "The wild kafal berries ripen for a few short weeks. Eat them with salt.", "Kafal & apple crumble", "Weekend drives up to Mussoorie begin."],
+    ["Jun", "June", "Dehradun litchis", "The valley's famous litchis, straight from the orchards near Raipur.", "Litchi & mint cooler", "Long evenings, open windows."],
+    ["Jul", "July", "Monsoon & bhutta", "Rain on the tin roof and roasted corn on every corner.", "Roasted bhutta with lime and chilli", "Harela: the festival of planting saplings."],
+    ["Aug", "August", "Green and steaming", "The hills are as green as they get. Chai never stops.", "Bedu roti with ghee", "Ghee Sankranti: everyone eats a little ghee for luck."],
+    ["Sep", "September", "Pahadi kakdi", "Giant hill cucumbers, grated into tangy mustard raita.", "Kumaoni kakdi raita plate", "Clear skies return after the rains."],
+    ["Oct", "October", "Harsil apples & walnuts", "Crisp air and the first apples from Harsil.", "Harsil apple crumble", "The best month for the view from the window."],
+    ["Nov", "November", "The stove is lit", "Fog in the mornings. The wood stove comes on.", "Bal mithai hot chocolate", "Igas Bagwal: the hills' own Diwali, eleven days later."],
+    ["Dec", "December", "Malta and mungfali", "Shawls, roasted peanuts, jaggery, and malta again.", "Gur adrak chai by the stove", "Snow on the far peaks on clear days."],
+  ];
+  let month = doonNow().month;
+  function drawWheel() {
+    const C = 230, R1 = 120, R2 = 205; let s = "";
+    for (let i = 0; i < 12; i++) {
+      const a0 = (i / 12) * Math.PI * 2 - Math.PI / 2 + .02, a1 = ((i + 1) / 12) * Math.PI * 2 - Math.PI / 2 - .02, am = (a0 + a1) / 2;
+      const p = (r, a) => `${(C + r * Math.cos(a)).toFixed(1)} ${(C + r * Math.sin(a)).toFixed(1)}`;
+      s += `<g class="m${i === month ? " on" : ""}" data-i="${i}" tabindex="0" role="button" aria-label="${MONTHS[i][1]}" aria-pressed="${i === month}"><path d="M${p(R1, a0)} A${R1} ${R1} 0 0 1 ${p(R1, a1)} L${p(R2, a1)} A${R2} ${R2} 0 0 0 ${p(R2, a0)} Z" fill="${i === doonNow().month ? "#e7d2ce" : "#e6e1d4"}"/><text x="${(C + 163 * Math.cos(am)).toFixed(1)}" y="${(C + 163 * Math.sin(am) + 4).toFixed(1)}" text-anchor="middle">${MONTHS[i][0].toUpperCase()}</text></g>`;
+    }
+    s += `<circle cx="${C}" cy="${C}" r="108" fill="#fbf8f1"/><g transform="translate(${C} ${C - 30}) scale(1.6)" aria-hidden="true"><g fill="#b1303a">${[0, 72, 144, 216, 288].map(r => `<ellipse cx="0" cy="-9" rx="4.2" ry="6.5" transform="rotate(${r})"/>`).join("")}</g><circle r="3" fill="#c38d2c"/></g><text class="hub" x="${C}" y="${C + 26}" text-anchor="middle" font-size="26" fill="#1d3a2e" font-style="italic">${MONTHS[month][1]}</text><text x="${C}" y="${C + 50}" text-anchor="middle" font-size="12" fill="#86908a" letter-spacing="1.5">${month === doonNow().month ? "THIS MONTH" : "ON THE HILLS"}</text>`;
+    qs("#wheel").innerHTML = s;
+    const M = MONTHS[month];
+    const card = qs("#season-card");
+    card.innerHTML = `<span class="label">${month === doonNow().month ? "On the hills right now" : "On the hills in " + M[1]}</span><h3>${safe(M[2].split(" ")[0])} <em>${safe(M[2].split(" ").slice(1).join(" ") || "season")}</em></h3><p>${safe(M[3])}</p><div class="special"><svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18h20v8a10 10 0 0 1-20 0z"/><path d="M32 20h3a4 4 0 0 1 0 8h-3.5"/><path d="M18 8c-2 3 2 4 0 7M24 8c-2 3 2 4 0 7"/></svg><div><span>Seasonal special</span><b>${safe(M[4])}</b></div></div><p class="fest">${safe(M[5])}</p>`;
+    card.classList.remove("season-fade"); void card.offsetWidth; card.classList.add("season-fade");
+  }
+  qs("#wheel").addEventListener("click", e => { const g = e.target.closest(".m"); if (g) { month = +g.dataset.i; drawWheel(); tap(6); } });
+  qs("#wheel").addEventListener("keydown", e => { const g = e.target.closest(".m"); if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); month = +g.dataset.i; drawWheel(); qs(`.m[data-i="${month}"]`, qs("#wheel")).focus(); } });
+  drawWheel();
+
+  /* ---------- Reserve: floor plan ---------- */
+  const TABLES = [
+    {id: "W1", name: "Window two-top", cap: 2, view: "Looks straight up at the Mussoorie ridge.", x: 70, y: 70, shape: "r", w: 70, h: 50},
+    {id: "W2", name: "Window two-top", cap: 2, view: "The best light in the morning.", x: 180, y: 70, shape: "r", w: 70, h: 50},
+    {id: "W3", name: "Window four", cap: 4, view: "Big window, room for a laptop and a pot.", x: 300, y: 70, shape: "r", w: 100, h: 54},
+    {id: "L1", name: "Long table", cap: 8, view: "Under the paper lanterns. Good for groups.", x: 120, y: 200, shape: "r", w: 220, h: 60},
+    {id: "F1", name: "By the stove", cap: 4, view: "Armchairs next to the wood stove. Warmest seat in the house.", x: 90, y: 330, shape: "c", r: 34},
+    {id: "N1", name: "Reading nook", cap: 2, view: "Two armchairs and the bookshelf. Quiet corner.", x: 250, y: 340, shape: "c", r: 28},
+    {id: "P1", name: "Porch bench", cap: 4, view: "Outside under the eaves. Dogs welcome.", x: 500, y: 140, shape: "r", w: 90, h: 46},
+    {id: "P2", name: "Porch bench", cap: 4, view: "Open air, with a view of the lane and the hills.", x: 500, y: 270, shape: "r", w: 90, h: 46},
+  ];
+  const book = {day: 0, time: null, size: 2, table: null};
+  const days = Array.from({length: 7}, (_, i) => { const d = new Date(Date.now() + i * 864e5); return {i, label: i === 0 ? "Today" : i === 1 ? "Tomorrow" : d.toLocaleDateString("en-IN", {weekday: "short", timeZone: "Asia/Kolkata"}), sub: d.toLocaleDateString("en-IN", {day: "numeric", month: "short", timeZone: "Asia/Kolkata"})}; });
+  const SLOTS = [["8:00 am", 8], ["10:00 am", 10], ["12:30 pm", 12.5], ["3:00 pm", 15], ["5:30 pm", 17.5], ["7:30 pm", 19.5], ["9:00 pm", 21]];
+  const taken = id => { if (book.time == null) return false; let h = 7; for (const ch of id + book.day + book.time) h = (h * 31 + ch.charCodeAt(0)) % 997; return h % 4 === 0; };
+  function drawPlan() {
+    let s = `<rect x="20" y="20" width="420" height="380" rx="18" fill="#2a4d40"/><rect x="460" y="40" width="160" height="340" rx="16" fill="none" stroke="#5c7f71" stroke-dasharray="5 7"/><text x="540" y="400" text-anchor="middle">Porch</text>`;
+    s += `<g opacity=".85"><rect x="40" y="22" width="380" height="10" rx="4" fill="#9ec1c8"/><path d="M40 16 q40 -14 80 -4 q50 -16 100 -2 q60 -18 110 -2 q40 -10 90 -4" fill="none" stroke="#9ec1c8" stroke-width="1.5"/><text x="230" y="52" text-anchor="middle">Big windows · hill view</text></g>`;
+    s += `<rect x="28" y="300" width="22" height="70" rx="4" fill="#a8433b"/><text x="40" y="392" text-anchor="middle">Stove</text><rect x="400" y="300" width="30" height="80" rx="4" fill="#5c7f71"/><text x="414" y="294" text-anchor="middle">Books</text><rect x="270" y="394" width="60" height="6" fill="#efeadd"/><text x="300" y="386" text-anchor="middle">Door</text>`;
+    for (const t of TABLES) {
+      const isTaken = taken(t.id), small = t.cap < book.size, on = book.table === t.id;
+      const cls = `tbl${isTaken ? " taken" : ""}${small ? " small" : ""}${on ? " on" : ""}`;
+      const fill = on ? "#f0a9a7" : "#2f5a4b";
+      let shape = t.shape === "c" ? `<circle class="top" cx="${t.x}" cy="${t.y}" r="${t.r}" fill="${fill}" stroke="#5c7f71" stroke-width="1.5"/>` : `<rect class="top" x="${t.x}" y="${t.y}" width="${t.w}" height="${t.h}" rx="10" fill="${fill}" stroke="#5c7f71" stroke-width="1.5"/>`;
+      const cx = t.shape === "c" ? t.x : t.x + t.w / 2, cy = t.shape === "c" ? t.y : t.y + t.h / 2;
+      let seats = "";
+      for (let k = 0; k < t.cap; k++) { const a = (k / t.cap) * 6.283; const rr = t.shape === "c" ? t.r + 12 : Math.max(t.w, t.h) / 2 + 8; const sx = cx + Math.cos(a) * (t.shape === "c" ? rr : t.w / 2 + 10) * (t.shape === "c" ? 1 : 1), sy2 = cy + Math.sin(a) * (t.shape === "c" ? rr : t.h / 2 + 10); seats += `<circle cx="${sx.toFixed(1)}" cy="${sy2.toFixed(1)}" r="6" fill="#5c7f71"/>`; }
+      s += `<g class="${cls}" data-t="${t.id}" tabindex="${isTaken || small ? -1 : 0}" role="button" aria-label="${t.name}, seats ${t.cap}${isTaken ? ", taken" : small ? ", too small" : ""}" aria-pressed="${on}">${seats}${shape}<text x="${cx}" y="${cy + 4}" text-anchor="middle" fill="#efeadd" style="fill:${on ? "#1d3a2e" : "#efeadd"};font-weight:600">${t.id}</text></g>`;
+    }
+    qs("#plan").innerHTML = s;
+    const t = TABLES.find(x => x.id === book.table);
+    qs("#picked").innerHTML = t ? `<b>${t.name} · ${t.id}</b>${safe(t.view)} Seats ${t.cap}.` : "No table picked yet. Choose a time, then tap a table.";
+    qs("#r-go").disabled = !(t && book.time != null);
+  }
+  function drawBookChips() {
+    const now = doonNow(), hNow = now.h + now.min / 60;
+    qs("#days").innerHTML = days.map(d => `<button type="button" data-d="${d.i}" aria-pressed="${d.i === book.day}">${d.label}<small>${d.sub}</small></button>`).join("");
+    qs("#times").innerHTML = SLOTS.map(([l, h]) => `<button type="button" data-h="${h}" aria-pressed="${book.time === h}" ${book.day === 0 && h <= hNow + .5 ? "disabled" : ""}>${l}</button>`).join("");
+  }
+  qs("#days").onclick = e => { const b = e.target.closest("[data-d]"); if (!b) return; book.day = +b.dataset.d; book.time = null; book.table = null; drawBookChips(); drawPlan(); tap(5); };
+  qs("#times").onclick = e => { const b = e.target.closest("[data-h]"); if (!b || b.disabled) return; book.time = +b.dataset.h; if (book.table && taken(book.table)) book.table = null; drawBookChips(); drawPlan(); tap(5); };
+  const sizeLabel = () => { qs("#p-n").textContent = `${book.size} ${book.size === 1 ? "person" : "people"}`; };
+  qs("#p-minus").onclick = () => { book.size = Math.max(1, book.size - 1); sizeLabel(); drawPlan(); tap(5); };
+  qs("#p-plus").onclick = () => { book.size = Math.min(8, book.size + 1); sizeLabel(); if (book.table && TABLES.find(t => t.id === book.table).cap < book.size) book.table = null; drawPlan(); tap(5); };
+  const pickTable = g => { if (!g || g.classList.contains("taken") || g.classList.contains("small")) return; if (book.time == null) { toast("Pick a time first"); return; } book.table = g.dataset.t; drawPlan(); tap(8); };
+  qs("#plan").addEventListener("click", e => pickTable(e.target.closest(".tbl")));
+  qs("#plan").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pickTable(e.target.closest(".tbl")); } });
+  qs("#r-go").onclick = () => {
+    const nm = qs("#r-name").value.trim();
+    if (!nm) { qs("#r-name").focus(); toast("Add a name for the table"); return; }
+    const t = TABLES.find(x => x.id === book.table), d = days[book.day], slot = SLOTS.find(s => s[1] === book.time)[0];
+    const code = "BUR-" + Math.random().toString(36).slice(2, 6).toUpperCase();
+    qs("#r-ticket").innerHTML = `<div class="ticket"><h4>Held for ${safe(nm)}</h4><b>${d.label}, ${slot}</b><p>${t.name} (${t.id}) for ${book.size}. Code ${code}. We keep it for 15 minutes past the time.</p><p class="demo-note" style="color:var(--ink-3)">Preview: this hold isn't sent anywhere yet.</p></div>`;
+    tap([10, 40, 10]);
+  };
+  drawBookChips(); drawPlan(); sizeLabel();
+
+  /* ---------- Tea leaves ---------- */
+  const FORTUNES = [
+    "A slow morning is coming your way. Let it be slow.",
+    "Someone you haven't called in a while is thinking of you. Call them.",
+    "The mist always lifts by noon. So will this.",
+    "Say yes to the second cup.",
+    "A small trip up the hill will clear your head this month.",
+    "Your kindness is being noticed, even if nobody says so.",
+    "Good news travels slowly in the hills, but it does arrive.",
+    "Plant something this week. It doesn't have to be a seed.",
+    "You already know the answer. Finish your tea and trust it.",
+    "A stranger will ask you the way. Walk them halfway.",
+    "Rain is coming. Bring a book, not an umbrella.",
+    "The best view is one more bend up the road.",
+  ];
+  const leafSvg = qs("#leafcup");
+  let leaves = Array.from({length: 26}, () => ({x: 210 + (Math.random() - .5) * 60, y: 240 + Math.random() * 30, r: Math.random() * 180}));
+  function drawLeaves() {
+    leafSvg.innerHTML = `<ellipse cx="210" cy="222" rx="196" ry="196" fill="#ece5d6"/><ellipse cx="210" cy="222" rx="170" ry="170" fill="none" stroke="#d6cfbf" stroke-width="2"/>` +
+      `<g class="cupturn"><circle cx="210" cy="210" r="136" fill="#fbf8f1" stroke="#c9c1ae" stroke-width="3"/><circle cx="210" cy="210" r="122" fill="#f3ead8"/><circle cx="210" cy="210" r="122" fill="none" stroke="#e2d6bd" stroke-width="10"/>` +
+      `<path d="M342 196 q46 0 46 28 q0 26 -46 24" fill="none" stroke="#c9c1ae" stroke-width="12" stroke-linecap="round"/>` +
+      leaves.map(l => `<ellipse class="leaf" cx="0" cy="0" rx="${3 + Math.random() * 3}" ry="${1.6 + Math.random() * 1.4}" fill="#4a3a22" opacity=".85" transform="translate(${l.x.toFixed(1)} ${l.y.toFixed(1)}) rotate(${l.r.toFixed(0)})"/>`).join("") + `</g>`;
+  }
+  drawLeaves();
+  let lastFortune = -1;
+  qs("#swirl").onclick = () => {
+    const sc = qs("#saucer"), btn = qs("#swirl"), out = qs("#fortune");
+    btn.disabled = true; out.textContent = ""; tap([6, 60, 6, 60, 6]);
+    sc.classList.remove("swirl"); void sc.offsetWidth; if (!still) sc.classList.add("swirl");
+    setTimeout(() => {
+      leaves = leaves.map(() => { const a = Math.random() * 6.283, d = Math.sqrt(Math.random()) * 105; return {x: 210 + Math.cos(a) * d, y: 210 + Math.sin(a) * d, r: Math.random() * 180}; });
+      drawLeaves();
+      let i; do { i = Math.floor(Math.random() * FORTUNES.length); } while (i === lastFortune); lastFortune = i;
+      out.textContent = "“" + FORTUNES[i] + "”"; out.classList.remove("show"); void out.offsetWidth; out.classList.add("show");
+      qs("#fortune-copy").hidden = false; btn.disabled = false; btn.textContent = "Swirl again";
+    }, still ? 50 : 2200);
+  };
+  qs("#fortune-copy").onclick = async () => { try { await navigator.clipboard.writeText(qs("#fortune").textContent + " — read at Buransh, Dehradun"); toast("Copied. Send it to someone."); } catch (e) { toast("Couldn't copy here. Select the text instead."); } };
+
+  /* ---------- People ---------- */
+  qs("#crew").innerHTML = SITE.people.map(p => `<div class="person" data-rise><div class="arch"><span>${safe(p.name.split(/\s+/).map(w => w[0]).join("").slice(0, 2))}</span></div><h3>${safe(p.name)}</h3><p class="role">${safe(p.role)}</p><p>${safe(p.note)}</p></div>`).join("");
+
+  /* ---------- Visit: the road draws itself as you scroll ---------- */
+  (function road() {
+    const svg = qs("#route");
+    const STOPS = [[60, 400, "Clock Tower", "0 km"], [150, 330, "Dilaram Chowk", "2 km"], [250, 250, "Rajpur Road", "4 km"], [350, 205, "Buransh", "6 km", 1], [470, 140, "Rajpur village", "9 km"], [585, 60, "Mussoorie", "about 30 km"]];
+    const d = "M60 400 C 100 370, 120 345, 150 330 S 210 280, 250 250 S 320 215, 350 205 S 430 170, 470 140 S 550 90, 585 60";
+    svg.innerHTML = `<path class="hill" d="M0 140 q80 -60 160 -20 q90 -80 180 -30 q100 -90 200 -40 q60 -30 100 -10"/><path class="hill" d="M0 210 q100 -50 200 -10 q120 -60 240 -20 q80 -40 200 0" opacity=".6"/>` +
+      `<path class="ghost" d="${d}"/><path class="path" id="road" d="${d}"/>` +
+      STOPS.map(([x, y, n, k, home]) => home ? `<g class="stop home" data-x="${x}"><circle cx="${x}" cy="${y}" r="12" stroke-width="3"/><text x="${x - 8}" y="${y - 44}">${n}</text><text class="k" x="${x - 8}" y="${y - 26}" style="font-family:var(--sans);font-style:normal;font-size:12.5px;fill:var(--ink-3)">${k} from Clock Tower</text></g>` : `<g class="stop" data-x="${x}"><circle cx="${x}" cy="${y}" r="7"/><text x="${x > 520 ? x - 14 : x + 14}" y="${y + 5}" text-anchor="${x > 520 ? "end" : "start"}">${n}</text><text class="k" x="${x > 520 ? x - 14 : x + 14}" y="${y + 22}" text-anchor="${x > 520 ? "end" : "start"}">${k}</text></g>`).join("");
+    const road = qs("#road"), len = road.getTotalLength();
+    road.style.strokeDasharray = len; road.style.strokeDashoffset = len;
+    const stops = qsa(".stop", svg);
+    function onScroll() {
+      const r = svg.getBoundingClientRect(), p = Math.min(1, Math.max(0, (innerHeight * .9 - r.top) / (r.height + innerHeight * .4)));
+      road.style.strokeDashoffset = still ? 0 : (len * (1 - p)).toFixed(1);
+      const reach = road.getPointAtLength(len * (still ? 1 : p)).x;
+      stops.forEach(s => s.classList.toggle("lit", +s.dataset.x <= reach + 2));
+    }
+    addEventListener("scroll", onScroll, {passive: true}); onScroll();
+  })();
+  qs("#addr").textContent = SITE.address; qs("#foot-addr").textContent = SITE.address; qs("#foot-ig").textContent = SITE.instagram;
+  function openState() { const {h, min} = doonNow(), t = h + min / 60, open = t >= SITE.opens && t < SITE.closes; const el = qs("#open-now"); el.classList.toggle("shut", !open); qs("span", el).textContent = open ? `Open now · until 10:30 pm` : `Closed now · opens 7:30 am`; }
+  openState(); setInterval(openState, 60000);
+  qs("#copy-addr").onclick = async () => { try { await navigator.clipboard.writeText(SITE.address); toast("Address copied"); } catch (e) { toast("Couldn't copy here. Select the address instead."); } };
+
+  /* ---------- Letters ---------- */
+  qs("#letter").addEventListener("submit", e => {
+    e.preventDefault();
+    const nm = qs("#l-name").value.trim(), em = qs("#l-mail").value.trim(), ok = qs("#l-ok").checked, err = qs("#l-err");
+    const problem = !nm ? "Add your name, so we know who to write to." : !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em) ? "That email address looks incomplete." : !ok ? "Tick the box so we're allowed to write to you." : "";
+    if (problem) { err.textContent = problem; err.hidden = false; return; }
+    err.hidden = true;
+    try { const l = JSON.parse(localStorage.getItem("buransh.letters") || "[]"); l.push({nm, em, at: new Date().toISOString()}); localStorage.setItem("buransh.letters", JSON.stringify(l)); } catch (x) {}
+    e.target.innerHTML = `<p class="fortune show" style="min-height:0">Thank you, ${safe(nm.split(" ")[0])}. The first letter comes with the next full moon.</p><p class="demo-note" style="color:var(--ink-3)">Preview: sign-ups are kept in this browser until the site goes live.</p>`;
+    tap([10, 40, 10]);
+  });
+
+  /* ---------- Tray ---------- */
+  const tray = new Map();
+  try { JSON.parse(localStorage.getItem("buransh.tray") || "[]").forEach(([k, v]) => { if (v && v.q > 0) tray.set(k, v); }); } catch (x) {}
+  const keep = () => { try { localStorage.setItem("buransh.tray", JSON.stringify([...tray])); } catch (x) {} };
+  let pickup = "ASAP", stage = "tray", payWay = "counter";
+  // Online payments switch on when the site runs on Netlify with Razorpay keys set (see README).
+  const PAYMENTS = {on: false, keyId: ""};
+  fetch("/.netlify/functions/razorpay-config").then(r => r.ok ? r.json() : null).then(c => { if (c && c.enabled) { PAYMENTS.on = true; PAYMENTS.keyId = c.keyId; payWay = "online"; } }).catch(() => {});
+  function loadRazorpay() {
+    if (window.Razorpay) return Promise.resolve();
+    return new Promise((ok, no) => { const s = document.createElement("script"); s.src = "https://checkout.razorpay.com/v1/checkout.js"; s.onload = ok; s.onerror = () => no(new Error("load")); document.head.appendChild(s); });
+  }
+  function addToTray(id, extra) {
+    const was = tray.get(id);
+    if (was) was.q += 1;
+    else { const x = BYID[id]; tray.set(id, extra ? {n: extra.n, p: extra.p, swatch: extra.swatch, q: 1} : {n: x.n, p: x.p, q: 1}); }
+    keep(); paintTray(true); tap(10);
+  }
+  document.addEventListener("click", e => { const b = e.target.closest("[data-add]"); if (b) { addToTray(b.dataset.add); toast(`${BYID[b.dataset.add].n} added`); } });
+  const count = () => [...tray.values()].reduce((s, v) => s + v.q, 0);
+  const sum = () => [...tray.values()].reduce((s, v) => s + v.q * v.p, 0);
+  function paintTray(bump) {
+    const n = count(), fab = qs("#trayfab");
+    qs("#tray-n").textContent = n;
+    qs("#fab-count").textContent = `${n} ${n === 1 ? "item" : "items"}`;
+    qs("#fab-total").textContent = rupees(sum());
+    fab.classList.toggle("up", n > 0 && !sheet.classList.contains("on"));
+    if (bump) { fab.classList.remove("bump"); void fab.offsetWidth; fab.classList.add("bump"); }
+    if (sheet.classList.contains("on") && stage === "tray") drawSheet();
+  }
+  const sheet = qs("#sheet"), veil = qs("#veil");
+  function openSheet() { stage = "tray"; drawSheet(); sheet.classList.add("on"); veil.classList.add("on"); sheet.removeAttribute("inert"); sheet.setAttribute("aria-hidden", "false"); qs("#trayfab").classList.remove("up"); setTimeout(() => qs("#sheet-x").focus(), 80); }
+  function closeSheet() { sheet.classList.remove("on"); veil.classList.remove("on"); sheet.setAttribute("inert", ""); sheet.setAttribute("aria-hidden", "true"); paintTray(); }
+  qs("#trayfab").onclick = openSheet; qs("#tray-open").onclick = openSheet; qs("#sheet-x").onclick = closeSheet; veil.onclick = closeSheet;
+  addEventListener("keydown", e => { if (e.key === "Escape") { if (sheet.classList.contains("on")) closeSheet(); if (overlay.classList.contains("open")) setOverlay(false); } });
+  function drawSheet() {
+    const B = qs("#sheet-body"), F = qs("#sheet-foot");
+    if (stage === "done") return;
+    if (!tray.size) { B.innerHTML = `<p class="empty-tray">Your tray is empty. Start with a pahadi chai?</p>`; F.innerHTML = `<button class="pill" type="button" data-add="pahadi-chai" style="justify-content:center">Add Pahadi Masala Chai · ${rupees(70)}</button>`; return; }
+    B.innerHTML = [...tray].map(([k, v]) => `<div class="tline">${v.swatch ? `<span class="swatch" style="background:${v.swatch}"></span>` : `<img src="${pic(k)}" alt="">`}<div><b>${safe(v.n)}</b><small class="tnum">${rupees(v.p)} each</small></div><span class="qty"><button type="button" data-q="${safe(k)}" data-d="-1" aria-label="One less">−</button><span class="tnum">${v.q}</span><button type="button" data-q="${safe(k)}" data-d="1" aria-label="One more">+</button></span></div>`).join("") +
+      `<div style="margin-top:18px"><span class="label">Pick up</span><div class="when" id="when">${["ASAP", "In 30 min", "In 1 hour"].map(w => `<button type="button" data-w="${w}" aria-pressed="${pickup === w}">${w}</button>`).join("")}</div></div>` +
+      `<div class="lform" style="margin-top:16px"><input type="text" id="o-name" placeholder="Name for the order" autocomplete="name" maxlength="40" aria-label="Name for the order"><input type="text" id="o-phone" placeholder="Mobile (for the payment receipt)" autocomplete="tel" inputmode="tel" maxlength="15" aria-label="Mobile number"></div>` +
+      `<div style="margin-top:18px"><span class="label">Payment</span><div class="payopts" id="payopts">` +
+      `<label class="payopt"><input type="radio" name="pay" value="online" ${payWay === "online" ? "checked" : ""}><span><b>Pay now</b><small>UPI, cards, netbanking or wallets, through Razorpay's secure checkout.${PAYMENTS.on ? "" : " (Preview: switches on once the site is live.)"}</small></span></label>` +
+      `<label class="payopt"><input type="radio" name="pay" value="counter" ${payWay === "counter" ? "checked" : ""}><span><b>Pay at the counter</b><small>Cash or UPI when you pick it up.</small></span></label></div></div>`;
+    F.innerHTML = `<div class="total"><span>Total</span><span class="tnum">${rupees(sum())} <small>incl. GST</small></span></div><p class="payfail" id="payfail" role="alert" hidden></p><button class="pill" type="button" id="place" style="justify-content:center">${payWay === "online" ? "Pay " + rupees(sum()) : "Place pre-order"}</button><p style="font-size:13px;color:var(--ink-3);text-align:center" id="paynote">${payWay === "online" ? "You'll pay in Razorpay's window. We never see your card or UPI details." : "Pay at the counter by cash or UPI when you collect."}</p>`;
+    qs("#place").onclick = place;
+  }
+  qs("#sheet-body").addEventListener("click", e => {
+    const q = e.target.closest("[data-q]"), w = e.target.closest("[data-w]");
+    if (q) { const v = tray.get(q.dataset.q); v.q += +q.dataset.d; if (v.q <= 0) tray.delete(q.dataset.q); keep(); paintTray(); tap(5); }
+    if (w) { pickup = w.dataset.w; qsa("#when button").forEach(x => x.setAttribute("aria-pressed", x === w)); tap(5); }
+  });
+  qs("#sheet-body").addEventListener("change", e => {
+    if (e.target.name !== "pay") return;
+    payWay = e.target.value; tap(5);
+    qs("#place").textContent = payWay === "online" ? "Pay " + rupees(sum()) : "Place pre-order";
+    qs("#paynote").textContent = payWay === "online" ? "You'll pay in Razorpay's window. We never see your card or UPI details." : "Pay at the counter by cash or UPI when you collect.";
+  });
+  async function place() {
+    const nm = (qs("#o-name") || {}).value?.trim(), phone = (qs("#o-phone") || {}).value?.trim() || "";
+    if (!nm) { qs("#o-name").focus(); toast("Add a name so we can call you"); return; }
+    if (phone && !/^\+?[0-9 ]{10,14}$/.test(phone)) { qs("#o-phone").focus(); toast("That mobile number looks short"); return; }
+    const fail = qs("#payfail"), btn = qs("#place");
+    const items = [...tray].map(([id, v]) => ({id, q: v.q}));
+    let paid = null;
+    if (payWay === "online" && PAYMENTS.on) {
+      btn.disabled = true; btn.textContent = "Opening checkout…"; fail.hidden = true;
+      try {
+        const res = await fetch("/.netlify/functions/razorpay-order", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({items, name: nm, phone, pickup})});
+        const order = await res.json(); if (!res.ok) throw new Error(order.error || "Couldn't start the payment.");
+        await loadRazorpay();
+        paid = await new Promise((resolve, reject) => {
+          const rz = new window.Razorpay({
+            key: order.keyId, order_id: order.orderId, amount: order.amount, currency: "INR",
+            name: "Buransh Tea House", description: `Pre-order ${order.receipt}`, prefill: {name: nm, contact: phone},
+            notes: {pickup}, theme: {color: "#1d3a2e"},
+            handler: async r => {
+              try {
+                const v = await fetch("/.netlify/functions/razorpay-verify", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(r)});
+                if (!v.ok) throw new Error("We couldn't confirm that payment. If money left your account, show this screen at the counter.");
+                resolve({receipt: order.receipt, amount: order.amount / 100, payment: r.razorpay_payment_id});
+              } catch (x) { reject(x); }
+            },
+            modal: {ondismiss: () => reject(new Error("dismissed"))},
+          });
+          rz.on("payment.failed", r => reject(new Error(r?.error?.description || "The payment didn't go through. Try another method.")));
+          rz.open();
+        });
+      } catch (x) {
+        btn.disabled = false; btn.textContent = "Pay " + rupees(sum());
+        if (x.message !== "dismissed") { fail.textContent = x.message === "load" ? "The payment window didn't load. Check your connection." : x.message; fail.hidden = false; }
+        return;
+      }
+    }
+    const token = 10 + Math.floor(Math.random() * 89), total = paid ? paid.amount : sum();
+    const preview = payWay === "online" && !PAYMENTS.on;
+    stage = "done"; tray.clear(); keep();
+    qs("#sheet-body").innerHTML = `<div class="token"><div class="num tnum">${token}</div><h4>${paid ? "Paid. " : ""}Thank you, ${safe(nm.split(" ")[0])}.</h4><p>Token ${token} · ${rupees(total)} · ${pickup === "ASAP" ? "ready in about 15 minutes" : "ready " + pickup.toLowerCase()}. We'll call your token at the counter.</p>` +
+      (paid ? `<p style="font-size:13px;color:var(--ink-3)">Receipt ${safe(paid.receipt)} · payment ${safe(paid.payment)}</p>` : preview ? `<p style="font-size:13px;color:var(--ink-3)">Preview: on the live site, Razorpay's checkout opens at this step. No money moved.</p>` : `<p style="font-size:13px;color:var(--ink-3)">Preview: this order isn't sent to the kitchen yet.</p>`) + `</div>`;
+    qs("#sheet-foot").innerHTML = `<button class="pill ghost" type="button" id="sheet-done" style="justify-content:center">Back to the hills</button>`;
+    qs("#sheet-done").onclick = closeSheet;
+    paintTray(); tap([12, 50, 18]);
+  }
+  paintTray();
+
+  /* ---------- Toast ---------- */
+  let tt; function toast(m) { const t = qs("#toast"); t.textContent = m; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 1900); }
+
+  /* ---------- Small zoom on the ritual photo ---------- */
+  qsa("[data-zoom]").forEach(el => io.observe(el));
+})();
+</script>
+
+</body></html>
